@@ -1,4 +1,4 @@
-function customBind (func, context, ...args) {
+function customBind (func, context, ...args){
 
     function f (...funcArgs) {
         const arrayAllArgs = [];
