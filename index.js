@@ -22,11 +22,11 @@ function sum (x) {
     const ctx = {
         accumulator: this.accumulator ? this.accumulator + x : x
     };
-    if (!this.accumulator){
+    if (!this.accumulator) {
         return x === undefined ? 0 : sum.bind(ctx);
     }
 
-    if (this.accumulator && x !== undefined){
+    if (this.accumulator && x !== undefined) {
         return sum.bind(ctx);
     }
 
