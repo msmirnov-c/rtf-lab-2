@@ -45,6 +45,7 @@ function sum (x) {
         }
         
         sumAllElements += nextEltmtnt;
+        
         return sumNext;
     }
 
