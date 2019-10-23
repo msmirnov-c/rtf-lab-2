@@ -9,20 +9,23 @@ function customBind (func, context, ...args) {
     return func.call(context, args);
 }
 
-function sum(x) {
+function sum (x) {
     if (x !== undefined) {
         let sum = x;
         return function sumY(y) {
             if (y !== undefined) {
                 sum += y;
                 return sumY;
+
             } else {
                 return sum;
+                
             }
-        }
+        };
     }
+
     return 0;
-};
+}
 
 module.exports = {
     customBind,
