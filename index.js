@@ -6,7 +6,7 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    // code
+    return (...wrappedArgs) => func.apply(context, [].concat(args).concat(wrappedArgs));
 }
 
 /* ============================================= */
@@ -19,7 +19,18 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    // code
+    const ctx = {
+        accumulator: this.accumulator ? this.accumulator + x : x
+    };
+    if (!this.accumulator) {
+        return x === undefined ? 0 : sum.bind(ctx);
+    }
+
+    if (this.accumulator && x !== undefined) {
+        return sum.bind(ctx);
+    }
+
+    return this.accumulator;
 }
 
 module.exports = {
