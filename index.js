@@ -8,14 +8,14 @@
 function customBind (func, context, ...args) {
     let arrayAllArgs = [];
 
-    for (let i = 0; i < args.length; i++) {
-        arrayAllArgs[i] = args[i];
+    for (let i = 2; i < arguments.length; i++) {
+        arrayAllArgs[i] = arguments[i];
     }
 
-    function f(...funcArgs){
+    function f(){
 
-        for (let i = arrayAllArgs.length, j = 0; j < funcArgs.length; i++, j++) {
-            arrayAllArgs[i] = funcArgs[j];
+        for (let i = arrayAllArgs.length, j = 0; j < arguments.length; i++, j++) {
+            arrayAllArgs[i] = arguments[j];
         }
 
         return func.apply(context, arrayAllArgs);
