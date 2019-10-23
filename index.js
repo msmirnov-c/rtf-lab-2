@@ -18,7 +18,7 @@ function customBind (func, context, ...args) {
 /**
  * Напишите функцию sum, вычисляющую суммы подобным образом:
  * sum(1)(2)( ) // 3
- * sum(1)(2)(3)( ) // 6
+ * sum(1)(2)(3)(4)( ) // 10
  * sum :: Number -> sum
  * sum :: void -> Number
  */
