@@ -20,6 +20,11 @@ function customBind (func, context, ...args) {
  */
 function sum (x) {
     // code
+
+       
+
+      
+      
 }
 
 module.exports = {
