@@ -18,8 +18,28 @@ function customBind (func, context, ...args) {
  * sum :: Number -> sum
  * sum :: void -> Number
  */
+let res = 0;
+let isCounting = true;
+
 function sum (x) {
-    // code
+    if (x == null) {
+        if (!isCounting) {
+            return null;
+        }
+
+        isCounting = false;
+
+        return res;
+    }
+
+    if (isCounting) {
+        res += x;
+    } else {
+        res = x;
+        isCounting = true;
+    }
+
+    return sum;
 }
 
 module.exports = {
