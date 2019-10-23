@@ -17,7 +17,7 @@ steps:
   displayName: 'Copy task'
 
 - script: |
-    echo $PATH && cd lab-tests/02 && ls
+    echo $PATH && cd lab-tests/02 && ls && cat test_full.spec.js
   displayName: 'h1'
 
 - script: |
