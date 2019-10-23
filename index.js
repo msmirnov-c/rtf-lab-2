@@ -42,10 +42,10 @@ function sum (x) {
     function sumNext (nextEltmtnt) {
         if (nextEltmtnt === undefined) {
             return sumNext.Number();
+        } else {
+            sumAllElements += nextEltmtnt;
         }
         
-        sumAllElements += nextEltmtnt;
-
         return sumNext;
     }
 
