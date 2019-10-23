@@ -7,6 +7,13 @@
  */
 function customBind(func, context, ...args) {
     // code
+
+
+
+
+
+
+
 }
 
 /* ============================================= */
