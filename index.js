@@ -25,17 +25,17 @@ function sum (x) {
     }
 
     let res = x;
-    const summer = (x) => {
+    const add = (x) => {
         if (x === undefined) {
             return res;
         }
 
         res += x;
 
-        return summer;
+        return add;
     };
 
-    return summer;
+    return add;
 }
 
 module.exports = {
