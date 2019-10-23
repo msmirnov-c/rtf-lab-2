@@ -6,7 +6,7 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    // code
+    return (...args2) => func.apply(context, args.concat(args2));
 }
 
 /* ============================================= */
@@ -22,7 +22,7 @@ let res = 0;
 let isCounting = true;
 
 function sum (x) {
-    if (x == null) {
+    if (x === null) {
         if (!isCounting) {
             return null;
         }
@@ -30,6 +30,10 @@ function sum (x) {
         isCounting = false;
 
         return res;
+    }
+
+    if (!Number.isInteger(x)) {
+        return null;
     }
 
     if (isCounting) {
