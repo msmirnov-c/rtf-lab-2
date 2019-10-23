@@ -39,20 +39,19 @@ function sum (x) {
 
     let sumAllElements = x;
 
-    function sumNext(nextEltmtnt) {
+    function sumNext (nextEltmtnt) {
         sumAllElements += nextEltmtnt;
 
         return sumNext;
     }
 
-    sumNext.Number = function() {
+    sumNext.Number = function () {
 
         return sumAllElements;
-    }
+    };
 
     return sumNext;
 }
-let check = sum(1)(2)(3)(4).Number();
 module.exports = {
     customBind,
     sum
