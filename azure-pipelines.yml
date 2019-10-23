@@ -25,5 +25,8 @@ steps:
   displayName: 'Copy task'
 
 - script: |
+    echo $PATH && cd lab-tests/02 && ls
+
+- script: |
     cd lab-tests/02 && npm run lint && npm run test
   displayName: 'Run tests'
