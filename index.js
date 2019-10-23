@@ -6,11 +6,11 @@ function customBind (func, context, ...args) {
     }
 
     function f (...funcArgs) {
-        for (let i = funcArgs.length, j = 0; j < arrayAllArgs.length; i++, j++) {
-            funcArgs[i] = arrayAllArgs[j];
+        for (let i = arrayAllArgs.length, j = 0; j < funcArgs.length; i++, j++) {
+            arrayAllArgs[i] = funcArgs[j];
         }
 
-        return func.apply(context, funcArgs);
+        return func.apply(context, arrayAllArgs);
     }
 
     return f;
