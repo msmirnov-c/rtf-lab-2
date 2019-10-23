@@ -6,7 +6,11 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    // code
+    return function () {
+        const inputArgs = [].slice.call(arguments);
+
+        return func.apply(context, args.concat(inputArgs));
+    };
 }
 
 /* ============================================= */
@@ -14,12 +18,22 @@ function customBind (func, context, ...args) {
 /**
  * Напишите функцию sum, вычисляющую суммы подобным образом:
  * sum(1)(2)( ) // 3
- * sum(1)(2)(3)( ) // 6
+ * sum(1)(2)(3)(4)( ) // 10
  * sum :: Number -> sum
  * sum :: void -> Number
  */
+let accumulator = 0;
 function sum (x) {
-    // code
+    if (x === undefined) {
+        const result = accumulator;
+        accumulator = 0;
+
+        return result;
+    }
+
+    accumulator += x;
+
+    return sum;
 }
 
 module.exports = {
