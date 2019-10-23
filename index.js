@@ -1,11 +1,11 @@
 function customBind (func, context, ...args) {
     const arrayAllArgs = [];
 
-    for (let i = 0, j = 2; j < arguments.length; i++, j++) {
-        arrayAllArgs[i] = arguments[j];
-    }
-
     function f (...funcArgs) {
+        for (let i = 0; i < args.length; i++) {
+            arrayAllArgs[i] = args[i];
+        }
+
         for (let i = arrayAllArgs.length, j = 0; j < funcArgs.length; i++, j++) {
             arrayAllArgs[i] = funcArgs[j];
         }
