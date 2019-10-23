@@ -33,23 +33,6 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (x === undefined) {
-        return 0;
-    }
-
-    let sumAllElements = x;
-
-    function sumNext (nextEltmtnt) {
-        sumAllElements += nextEltmtnt;
-
-        return sumNext;
-    }
-
-    sumNext.Number = function () {
-        return sumAllElements;
-    };
-
-    return sumNext;
 }
 module.exports = {
     customBind,
