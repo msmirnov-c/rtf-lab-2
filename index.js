@@ -6,7 +6,9 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    // code
+    return function (...as) {
+        return func.call(context, ...(args.concat(as)));
+    };
 }
 
 /* ============================================= */
