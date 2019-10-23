@@ -18,32 +18,24 @@ function customBind (func, context, ...args) {
  * sum :: Number -> sum
  * sum :: void -> Number
  */
-let res = 0;
-let isCounting = true;
 
 function sum (x) {
-    if (x === null) {
-        if (!isCounting) {
-            return null;
+    if (x === undefined) {
+        return 0;
+    }
+
+    let res = x;
+    const summer = (x) => {
+        if (x === undefined) {
+            return res;
         }
 
-        isCounting = false;
-
-        return res;
-    }
-
-    if (!Number.isInteger(x)) {
-        return null;
-    }
-
-    if (isCounting) {
         res += x;
-    } else {
-        res = x;
-        isCounting = true;
-    }
 
-    return sum;
+        return summer;
+    };
+
+    return summer;
 }
 
 module.exports = {
