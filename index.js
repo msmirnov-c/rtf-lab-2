@@ -6,23 +6,5 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    // code
+    return func.apply(context,args);
 }
-
-/* ============================================= */
-
-/**
- * Напишите функцию sum, вычисляющую суммы подобным образом:
- * sum(1)(2)( ) // 3
- * sum(1)(2)(3)( ) // 6
- * sum :: Number -> sum
- * sum :: void -> Number
- */
-function sum (x) {
-    // code
-}
-
-module.exports = {
-    customBind,
-    sum
-};
