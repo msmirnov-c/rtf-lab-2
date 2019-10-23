@@ -46,7 +46,6 @@ function sum (x) {
     }
 
     sumNext.Number = function () {
-
         return sumAllElements;
     };
 
