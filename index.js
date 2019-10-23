@@ -6,16 +6,15 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    let arrayAllArgs = [];
+    const arrayAllArgs = [];
 
-    for (let i = 2; i < arguments.length; i++) {
-        arrayAllArgs[i] = arguments[i];
+    for (let i = 0; i < args.length; i++) {
+        arrayAllArgs[i] = args[i];
     }
 
-    function f(){
-
-        for (let i = arrayAllArgs.length, j = 0; j < arguments.length; i++, j++) {
-            arrayAllArgs[i] = arguments[j];
+    function f (...funcArgs) {
+        for (let i = arrayAllArgs.length, j = 0; j < funcArgs.length; i++, j++) {
+            arrayAllArgs[i] = funcArgs[j];
         }
 
         return func.apply(context, arrayAllArgs);
@@ -34,14 +33,11 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-
     if (x === undefined) {
-
         return 0;
     }
 
 }
-
 module.exports = {
     customBind,
     sum
