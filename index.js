@@ -35,7 +35,6 @@ function sum (x) {
     }
 
     return callBack;
-    // code
 }
 
 module.exports = {
