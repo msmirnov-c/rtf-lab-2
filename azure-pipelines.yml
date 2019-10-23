@@ -17,7 +17,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    cd lab-tests/02 && npm install
+    npm install && cd lab-tests/02 && npm install
   displayName: 'Install dependencies'
 
 - script: |
