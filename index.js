@@ -37,7 +37,22 @@ function sum (x) {
         return 0;
     }
 
+    let sumAllElements = x;
+
+    function sumNext(nextEltmtnt) {
+        sumAllElements += nextEltmtnt;
+
+        return sumNext;
+    }
+
+    sumNext.Number = function() {
+
+        return sumAllElements;
+    }
+
+    return sumNext;
 }
+let check = sum(1)(2)(3)(4).Number();
 module.exports = {
     customBind,
     sum
