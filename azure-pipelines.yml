@@ -11,14 +11,6 @@ steps:
 - script: |
      git clone $(git_url)
   displayName: 'Cloning Tests'
-- task: NodeTool@0
-  inputs:
-   versionSpec: '10.x'
-  displayName: 'Install Node.js'
-
-- script: |
-    npm install && cd lab-tests/02 && npm install
-  displayName: 'Install dependencies'
 
 - script: |
     cd lab-tests/02 && cp -f ../../index.js ./
