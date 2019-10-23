@@ -27,7 +27,7 @@ function sum (x) {
         if (nextEltmtnt === undefined) {
             return sumNext.Number();
         }
-        
+
         sumAllElements += nextEltmtnt;
 
         return sumNext;
