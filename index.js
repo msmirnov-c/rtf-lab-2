@@ -20,10 +20,11 @@ function customBind (func, context, ...args) {
  */
 function sum (x) {
     let tempSum = x;
-    function sumNextBrackets(nextArg) {
+    function sumNextBrackets (nextArg) {
         if (nextArg == null) {
             return tempSum;
         }
+
         tempSum += nextArg;
 
         return sumNextBrackets;
