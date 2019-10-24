@@ -6,10 +6,8 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    const primaryArgs = [].concat(args);
-
     return function (...newArgs) {
-        return func.apply(context, primaryArgs.concat([].concat(newArgs)));
+        return func.apply(context, args.concat(newArgs));
     };
 }
 
@@ -23,18 +21,20 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (typeof x === 'undefined') { return 0; }
+    if (x === undefined) {
+        return 0;
+    }
 
     let tempSum = x;
-    function callBack (newTemp) {
-        if (typeof newTemp !== 'undefined') {
+    function newTempSum (newTemp) {
+        if (newTemp !== undefined) {
             tempSum += newTemp;
 
-            return callBack;
+            return newTempSum;
         } else return tempSum;
     }
 
-    return callBack;
+    return newTempSum;
 }
 
 module.exports = {
