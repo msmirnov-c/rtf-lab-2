@@ -14,7 +14,7 @@ function customBind (func, context, ...args) {
 function sum (x) {
     if (x !== undefined) {
         let sum = x;
-        
+
         return function sumY (y) {
             if (y !== undefined) {
                 sum += y;
