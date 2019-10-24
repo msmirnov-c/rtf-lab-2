@@ -30,14 +30,11 @@ function sum (x) {
     if (currentSum === undefined) { return 0; }
 
     function f (y) {
-        currentSum += y;
+        while (y !== undefined)
+            currentSum += y;
 
-        return f;
-    }
-
-    f.toString = function () {
         return currentSum;
-    };
+    }
 
     return f;
 }
