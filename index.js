@@ -8,7 +8,7 @@
 function customBind (func, context, ...args) {
     return function (...bindedArgs) {
         return func.call(context, ...args, ...bindedArgs);
-    }
+    };
 }
 
 /**
@@ -20,8 +20,9 @@ function customBind (func, context, ...args) {
  */
 function sum (x) {
     return (b) => {
-        if (typeof b === "undefined")
+        if (typeof b === 'undefined') {
             return x;
+        }
 
         return sum(x + b);
     };
