@@ -6,8 +6,8 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    return function f () {
-        return func.apply(context, args.slice.call(arguments));
+    return function f (...functionArgs) {
+        return func.apply(context, args.concat(functionArgs));
     };
 }
 
@@ -26,8 +26,7 @@ function sum (x = 0) {
 
     return first;
 }
-
-module.exports = {
+/*module.exports = {
     customBind,
     sum
-};
+};*/
