@@ -18,9 +18,9 @@ function sum (x) {
 
         return tmp;
     }
-    if (tmp.toString === ' ') 
-    return summator
-
+    if (tmp.toString === ' ') {
+        return summator;
+    }
     return tmp;
 }
 module.exports = {
