@@ -30,8 +30,9 @@ function sum (x) {
     if (currentSum === undefined) { return 0; }
 
     function f (y) {
-        if (y !== undefined)
+        if (y !== undefined) {
             currentSum += y;
+        }
 
         return currentSum;
     }
