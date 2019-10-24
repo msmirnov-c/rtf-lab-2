@@ -8,7 +8,7 @@
 function customBind (func, context, ...args) {
     return function f () {
         return func.apply(context, args.slice.call(arguments));
-    }; 
+    };
 }
 
 /* ============================================= */
@@ -17,12 +17,14 @@ function sum (x = 0) {
     var l = x;
 
     function first (t = 0) {
-       l += t;
-       return first;
+        l += t;
+        return first;
+
     }
 
-    first.valueOf = () => { return l };
+    first.valueOf = () => { return l; };
     return first;
+    
 }
 
 module.exports = {
