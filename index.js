@@ -6,7 +6,7 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    return function f (...functionArgs) {
+    return function (...functionArgs) {
         return func.apply(context, args.concat(functionArgs));
     };
 }
@@ -14,18 +14,19 @@ function customBind (func, context, ...args) {
 /* ============================================= */
 
 function sum (x = 0) {
-    var l = x;
+    let firstAddendum = x;
 
-    function first (t = 0) {
-        l += t;
+    function first (addendum = 0) {
+        firstAddendum += addendum;
 
         return first;
     }
 
-    first.valueOf = () => { return l; };
+    first.valueOf = () => { return firstAddendum; };
 
     return first;
 }
+
 module.exports = {
     customBind,
     sum
