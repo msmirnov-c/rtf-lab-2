@@ -22,8 +22,8 @@ function customBind (func, context, ...args) {
 function sum (x) {
     if (x === undefined) {
         return 0;
-    }
-    
+    };
+
     const finalResult = function (result, current) {
         if (current === undefined || current === 0) {
             return result;
