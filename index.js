@@ -32,6 +32,8 @@ function sum (x) {
     function f (y) {
         if (y !== undefined) {
             currentSum += y;
+
+            return f;
         }
 
         return currentSum;
