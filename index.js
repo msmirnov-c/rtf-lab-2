@@ -6,10 +6,10 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    const bindArgs = [].slice.call(args, 2);
+    const bindArgs = [].concat.call(args);
 
-    return function () {
-        const funcArgs = [].slice.call(args);
+    return function (...args) {
+        const funcArgs = [].concat.call(args);
 
         return func.apply(context, bindArgs.concat(funcArgs));
     };
