@@ -19,17 +19,17 @@ function sum (x) {
         return 0;
     }
 
-    function first (addendum) {
+    function nextSum (addendum) {
         if (addendum === undefined) {
             return firstAddendum;
         }
 
         firstAddendum += addendum;
 
-        return first;
+        return nextSum;
     }
 
-    return first;
+    return nextSum;
 }
 
 module.exports = {
