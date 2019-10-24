@@ -5,22 +5,29 @@
  * @param {Array<any>} args массив аргументов
  * @return {Function} функция с нужным контекстом
  */
+
 function customBind (func, context, ...args) {
-    // code
+    
 }
 
-/* ============================================= */
 
-/**
- * Напишите функцию sum, вычисляющую суммы подобным образом:
- * sum(1)(2)( ) // 3
- * sum(1)(2)(3)( ) // 6
- * sum :: Number -> sum
- * sum :: void -> Number
- */
+
+
 function sum (x) {
-    // code
+    let summator = x;
+    function tmp(n) {
+        summator += n;
+        return tmp;
+    }
+
+    tmp.toString = function() {
+        return summator;
+    };
+
+    return tmp;
 }
+
+
 
 module.exports = {
     customBind,
