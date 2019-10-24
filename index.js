@@ -8,16 +8,13 @@
 function customBind (func, context, ...args) {
     // let f = func.bind(context, ...args);
     // return f;  =)
-    const emptyArr = [];
-    const defaultArgsArr = emptyArr.slice.call(arguments, 2); // массив аргументов по умолчанию
+    const defaultArgsArr = args;
 
-    return function () {
-        // массив с новыми переданными аргументами
-        const newArgs = emptyArr.slice.call(arguments);
-        // соединение двух массивов - все аргументы
-        const allArgs = defaultArgsArr.concat(newArgs);
+    return function (...newArgs) {
+        const newArgsArr = newArgs;
+        const allArgsArr = defaultArgsArr.concat(newArgsArr);
 
-        return func.apply(context, allArgs);
+        return func.apply(context, allArgsArr);
     };
 }
 
@@ -35,14 +32,14 @@ function sum (x) {
         return 0;
     }
 
-    const summary = x;
+    const total = x;
 
     return (nextNumber) => {
         if (nextNumber === undefined) {
-            return summary;
+            return total;
         }
 
-        return sum(x + nextNumber);
+        return sum(total + nextNumber);
     };
 }
 
