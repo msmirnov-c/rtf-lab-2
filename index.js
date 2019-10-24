@@ -25,12 +25,12 @@ function sum (x) {
     }
 
     let res = x;
-    const add = (x) => {
-        if (x === undefined) {
+    const add = (number) => {
+        if (number === undefined) {
             return res;
         }
 
-        res += x;
+        res += number;
 
         return add;
     };
