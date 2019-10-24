@@ -18,8 +18,7 @@ function sum (x) {
 
         return tmp;
     }
-    if (tmp.toString === ' ') {
-        
+    if (tmp.toString === ' ') { 
         return summator; 
     }
 
