@@ -20,20 +20,18 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (x === undefined)
+    if (x === undefined) {
         return 0;
-
-    var finalResult = function (result, current) {
+    }
+    const finalResult = function (result, current) {
         if (current === undefined || current === 0) {
             return result;
         }
 
         return customBind(finalResult, this, result + current);
-
-    }
+    };
 
     return customBind(finalResult, this, x);
-
 }
 
 module.exports = {
