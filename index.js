@@ -40,7 +40,7 @@ function sum (x) {
     }
 
     return newAmount;
-}	}
+}
 
 module.exports = {
     customBind,
