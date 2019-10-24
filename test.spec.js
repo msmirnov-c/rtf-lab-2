@@ -1,4 +1,4 @@
-const { customBind, sum} = require('./index');
+const { customBind, sum } = require('./index');
 
 describe('bind, call, apply', () => {
     describe('customBind', () => {
