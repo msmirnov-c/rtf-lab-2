@@ -19,8 +19,7 @@ function sum (x) {
         return tmp;
     }
     if (tmp.toString === ' ') {
-        return summator;
-    }
+        return summator; }
     return tmp;
 }
 module.exports = {
