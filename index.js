@@ -6,10 +6,10 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    // code
+    return function (...bindedArgs) {
+        return func.call(context, ...args, ...bindedArgs);
+    }
 }
-
-/* ============================================= */
 
 /**
  * Напишите функцию sum, вычисляющую суммы подобным образом:
@@ -19,7 +19,12 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    // code
+    return (b) => {
+        if (typeof b === "undefined")
+            return x;
+
+        return sum(x + b);
+    };
 }
 
 module.exports = {
