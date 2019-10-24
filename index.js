@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  * Создайте собственную реализацию функции bind
  * @param {Function} func передаваемая функция
@@ -6,7 +7,9 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    // code
+    return function (...extraArgs) {
+        return func.apply(context, args.concat(extraArgs));
+    };
 }
 
 /* ============================================= */
@@ -19,7 +22,20 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    // code
+    if (x === undefined) { return 0; }
+
+    let amount = x;
+    function newAmount (y) {
+        if (y === undefined) {
+            return amount;
+        }
+
+        amount += y;
+
+        return newAmount;
+    }
+
+    return newAmount;
 }
 
 module.exports = {
