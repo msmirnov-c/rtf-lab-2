@@ -6,20 +6,30 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    // code
+    return function change (...functionArgs) {
+        return func.apply(context, args.concat(functionArgs));
+    };
 }
 
 /* ============================================= */
 
-/**
- * Напишите функцию sum, вычисляющую суммы подобным образом:
- * sum(1)(2)( ) // 3
- * sum(1)(2)(3)( ) // 6
- * sum :: Number -> sum
- * sum :: void -> Number
- */
 function sum (x) {
-    // code
+    let firstAddendum = x;
+    if (firstAddendum === undefined) {
+        return 0;
+    }
+
+    function nextSum (addendum) {
+        if (addendum === undefined) {
+            return firstAddendum;
+        }
+
+        firstAddendum += addendum;
+
+        return nextSum;
+    }
+
+    return nextSum;
 }
 
 module.exports = {
