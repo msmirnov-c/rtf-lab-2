@@ -21,7 +21,6 @@ function sum (x) {
     if (tmp.toString === ' ') {
         return summator;
     }
-    
     return tmp;
 }
 module.exports = {
