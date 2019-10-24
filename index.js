@@ -18,13 +18,13 @@ function sum (x = 0) {
 
     function first (t = 0) {
         l += t;
-        return first;
 
+        return first;
     }
 
     first.valueOf = () => { return l; };
+
     return first;
-    
 }
 
 module.exports = {
