@@ -6,10 +6,19 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    // code
+    // let f = func.bind(context, ...args);
+    // return f;  =)
+    const defaultArgsArr = args;
+
+    return function (...newArgs) {
+        const newArgsArr = newArgs;
+        const allArgsArr = defaultArgsArr.concat(newArgsArr);
+
+        return func.apply(context, allArgsArr);
+    };
 }
 
-/* ============================================= */
+/* ============================================== */
 
 /**
  * Напишите функцию sum, вычисляющую суммы подобным образом:
@@ -19,7 +28,19 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    // code
+    if (x === undefined) {
+        return 0;
+    }
+
+    const total = x;
+
+    return (nextNumber) => {
+        if (nextNumber === undefined) {
+            return total;
+        }
+
+        return sum(total + nextNumber);
+    };
 }
 
 module.exports = {
