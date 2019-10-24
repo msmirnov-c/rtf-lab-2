@@ -26,7 +26,7 @@ function sum (x = 0) {
 
     return first;
 }
-/*module.exports = {
+module.exports = {
     customBind,
     sum
-};*/
+};
