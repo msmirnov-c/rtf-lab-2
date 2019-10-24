@@ -6,9 +6,10 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    const arr = [];
-    arr = func.apply(context, ...args);
-    return arr;
+    let result = [...newargs];
+    result = func.apply(context, ...args);
+
+    return result;
 }
 
 function sum (x) {
