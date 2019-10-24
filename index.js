@@ -7,12 +7,8 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    var defaultArgs = args;
-
     return function (...extraArgs) {
-        var allArgs = defaultArgs.concat(extraArgs);
-
-        return func.apply(context, allArgs);
+        return func.apply(context, args.concat(extraArgs));
     };
 }
 
