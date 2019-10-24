@@ -6,17 +6,21 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    return func.apply(context, ...args);
+    let result = func.apply(context, ...args);
+    return result;
 }
 function sum (x) {
     let summator = x;
-    function tmp(n) {
+    function tmp (n) {
         summator += n;
+
         return tmp;
     }
-    tmp.toString = function() {
+    tmp.toString = function () {
+
         return summator;
     };
+
     return tmp;
 }
 module.exports = {
