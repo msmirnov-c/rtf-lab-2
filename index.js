@@ -13,18 +13,21 @@ function customBind (func, context, ...args) {
 
 /* ============================================= */
 
-function sum (x = 0) {
+function sum (x) {
     let firstAddendum = x;
+    if (firstAddendum === undefined) {
+        return 0;
+    }
 
-    function first (addendum = 0) {
+    function first (addendum) {
+        if (addendum === undefined) {
+            return firstAddendum;
+        }
+
         firstAddendum += addendum;
 
         return first;
     }
-
-    first.toString = function () {
-        return firstAddendum;
-    };
 
     return first;
 }
