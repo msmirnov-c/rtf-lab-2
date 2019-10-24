@@ -6,7 +6,8 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    let result = func.apply(context, ...args);
+    const result = func.apply(context, ...args);
+
     return result;
 }
 function sum (x) {
@@ -17,7 +18,6 @@ function sum (x) {
         return tmp;
     }
     tmp.toString = function () {
-
         return summator;
     };
 
