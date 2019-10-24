@@ -16,17 +16,17 @@ function customBind (func, context, ...args) {
 function sum (x = 0) {
     let firstAddendum = x;
 
-    function nextSum (addendum) {
-        if (addendum === undefined) {
-            return firstAddendum;
-        }
-
+    function first (addendum = 0) {
         firstAddendum += addendum;
 
-        return nextSum;
+        return first;
     }
 
-    return nextSum;
+    first.toString = function () {
+        return firstAddendum;
+    };
+
+    return first;
 }
 
 module.exports = {
