@@ -10,6 +10,7 @@ function customBind (func, context, ...args) {
 
     return result;
 }
+
 function sum (x) {
     let summator = x;
     function tmp (n) {
@@ -17,9 +18,8 @@ function sum (x) {
 
         return tmp;
     }
-    tmp.toString = function () {
-        return summator;
-    };
+    if (tmp.toString === ' ') 
+    return summator
 
     return tmp;
 }
