@@ -25,7 +25,8 @@ function sum (x) {
     let resultSum = x;
 
     return function (y) {
-        return resultSum += y;
+        resultSum += y;
+        return resultSum;
     };
 }
 
