@@ -6,10 +6,8 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    return function () {
-        const argumentsOfFunc = [].slice.call(arguments);
-
-        return func.apply(context, args.concat(argumentsOfFunc));
+    return function (...allArgs) {
+        return func.apply(context, args.concat(allArgs));
     };
 }
 
@@ -25,14 +23,12 @@ function customBind (func, context, ...args) {
 function sum (x) {
     if (x === undefined) return 0;
 
-    let resOfAdd = x;
+    return function add (y) {
+        if (y === undefined) return x;
 
-    return function (y) {
-        if (y === undefined) return resOfAdd;
+        x += y;
 
-        resOfAdd = resOfAdd + y;
-
-        return sum.call(y, resOfAdd);
+        return add;
     };
 }
 
