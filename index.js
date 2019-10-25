@@ -6,11 +6,7 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    var firstArgs = [].slice.call(arguments, 2);
-
-    return function () {
-        var remainArgs = [].slice.call(arguments);
-
+    return function (...remainArgs) {
         return func.apply(context, firstArgs.concat(remainArgs));
     };
 };
