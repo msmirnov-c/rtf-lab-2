@@ -5,11 +5,11 @@
  * @param {Array<any>} args массив аргументов
  * @return {Function} функция с нужным контекстом
  */
-function customBind(func, context, ...args) {
+function customBind (func, context, ...args) {
     // code
     return function () {
         func.apply(context, args);
-    }
+    };
 }
 
 /* ============================================= */
@@ -21,11 +21,12 @@ function customBind(func, context, ...args) {
  * sum :: Number -> sum
  * sum :: void -> Number
  */
-function sum(x) {
+function sum (x) {
     let resultSum = x;
+
     return function (y) {
         return resultSum += y;
-    }
+    };
 }
 
 module.exports = {
