@@ -23,19 +23,11 @@ function customBind (func, context, ...args) {
 function sum (x) {
     if (x === undefined) return 0;
 
-    const accumulator = [];
-    accumulator.push(x);
-    const addNextItem = (nextItem) => {
-        if (nextItem === undefined) {
-            return accumulator.reduce((a, b) => a + b);
-        }
+    return function (nextNum) {
+        if (nextNum === undefined) return x;
 
-        accumulator.push(nextItem);
-
-        return addNextItem;
+        return sum(x + nextNum);
     };
-
-    return addNextItem;
 }
 
 module.exports = {
