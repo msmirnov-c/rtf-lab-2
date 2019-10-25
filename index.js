@@ -35,7 +35,7 @@ function sum (x) {
             return newSum;
         }
 
-        else return count;
+        return count;
     }
 
     return newSum;
