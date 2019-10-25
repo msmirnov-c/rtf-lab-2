@@ -7,7 +7,7 @@
  */
 function customBind (func, context, ...args) {
     return function (...newArgs) {
-        return func.apply(context, ...args.push(...newArgs));
+        return func.apply(context, ...newArgs);
     };
 }
 
@@ -23,7 +23,7 @@ function customBind (func, context, ...args) {
 function sum (x) {
     let tempSum = x;
     function sumNextBrackets (nextArg) {
-        if (nextArg === undefined) {
+        if (nextArg == null) {
             return tempSum;
         }
 
@@ -32,7 +32,7 @@ function sum (x) {
         return sumNextBrackets;
     }
 
-    if (tempSum === undefined) {
+    if (tempSum == null) {
         return 0;
     }
 
