@@ -7,6 +7,9 @@
  */
 function customBind (func, context, ...args) {
     // code
+    return function(){
+        func.apply(context, args);
+    }
 }
 
 /* ============================================= */
@@ -19,7 +22,10 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    // code
+    let resultSum = x;
+    return function(y) {
+        return  resultSum += y;
+    }
 }
 
 module.exports = {
