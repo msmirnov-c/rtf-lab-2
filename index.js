@@ -7,9 +7,11 @@
  */
 function customBind (func, context, ...args) {
     var firstArgs = [].slice.call(arguments, 2);
-    return function() {
+
+    return function () {
         var remainArgs = [].slice.call(arguments);
-        return remain.apply(context, firstArgs.concat(fnArgs));
+
+        return func.apply(context, firstArgs.concat(remainArgs));
     };
 };
 
@@ -23,15 +25,16 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (sum === undefined) return o;
+    if (sum === undefined) return 0;
 
     let count = x;
-    function newSum (nsum) {  
-        if (nsum != undefined){
+    function newSum (nsum) {
+        if (nsum !== undefined) {
             count += nsum;
+
             return newSum;
         }
-        
+
         else return count;
     }
 
