@@ -22,21 +22,18 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (x === undefined) { return 0; }
+    if (x === undefined) return 0;
 
-    let amount = x;
-    function newAmount (y) {
-        if (y === undefined) {
-            return amount;
-        }
+    var newAmount = (amount) => {
+        if (amount === undefined) return x;
 
-        amount += y;
+        x += amount;
 
         return newAmount;
-    }
+    };
 
     return newAmount;
-}
+};
 
 module.exports = {
     customBind,
