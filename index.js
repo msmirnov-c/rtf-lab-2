@@ -7,7 +7,7 @@
  */
 function customBind (func, context, ...args) {
     return function (newArgs) {
-        return func.apply(context, args.slice(0, args.length).concat(newArgs));
+        return func.apply(context, args.concat(newArgs));
     };
 }
 
@@ -21,10 +21,6 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (x === undefined) {
-        return 0;
-    }
-
     let tempSum = x;
     function sumNextBrackets (nextArg) {
         if (nextArg == null) {
