@@ -21,6 +21,10 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
+    if(x === undefined) {
+        return 0;
+    }
+    
     let tempSum = x;
     function sumNextBrackets (nextArg) {
         if (nextArg == null) {
