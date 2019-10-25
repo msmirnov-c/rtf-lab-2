@@ -23,7 +23,7 @@ function customBind (func, context, ...args) {
 function sum (x) {
     let tempSum = x;
     function sumNextBrackets (nextArg) {
-        if (nextArg == null) {
+        if (nextArg == undefined) {
             return tempSum;
         }
 
@@ -32,7 +32,7 @@ function sum (x) {
         return sumNextBrackets;
     }
 
-    if (tempSum == null) {
+    if (tempSum == undefined) {
         return 0;
     }
 
