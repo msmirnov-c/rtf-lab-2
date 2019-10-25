@@ -25,7 +25,7 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (sum === undefined) return 0;
+    if (x === undefined) return 0;
 
     let count = x;
     function newSum (nsum) {
