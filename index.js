@@ -26,6 +26,7 @@ function sum (x) {
 
     return function (y) {
         resultSum += y;
+
         return resultSum;
     };
 }
