@@ -9,6 +9,7 @@ function customBind(func, context, ...args) {
     // code
     return function () {
         func.apply(context, args);
+
     }
 }
 
@@ -25,6 +26,7 @@ function sum(x) {
     let resultSum = x;
     return function (y) {
         return resultSum += y;
+        
     }
 }
 
