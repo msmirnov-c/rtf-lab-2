@@ -25,7 +25,7 @@ function sum (x) {
     }
 
     const finalResult = function (result, current) {
-        if (current === undefined || current === 0) {
+        if (current === undefined) {
             return result;
         }
 
