@@ -19,7 +19,7 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    let context = {
+    const context = {
         total: this.total ? this.total + x : x
     };
 
