@@ -23,8 +23,9 @@ function customBind (func, context, ...args) {
 function sum (x) {
     let currentSum = x;
 
-    if (currentSum === undefined)
+    if (currentSum === undefined) {
         return 0;
+    }
 
     function summing (y) {
         if (y !== undefined) {
