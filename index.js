@@ -19,13 +19,15 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    return (b) => {
-        if (typeof b === 'undefined') {
-            return x;
-        }
-
-        return sum(x + b);
+    let context = {
+        total: this.total ? this.total + x : x
     };
+
+    if (x === undefined) {
+        return this.total === undefined ? 0 : this.total;
+    }
+
+    return sum.bind(context);
 }
 
 module.exports = {
