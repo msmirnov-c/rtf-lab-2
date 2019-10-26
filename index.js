@@ -5,9 +5,10 @@
 * @param {Array<any>} args массив аргументов
 * @return {Function} функция с нужным контекстом
 */
-function customBind(func, context, ...args) {
-
-    return func.apply(context, args.concat(newArgs));
+function customBind( func, context, ...args) {
+    return function (...Args) {
+    return func.apply(context, args.concat(Args));
+    };
 }
 /* ============================================= */
 
@@ -19,10 +20,8 @@ function customBind(func, context, ...args) {
 * sum :: void -> Number
 */
 function sum(x) {
-    if (x === undefined) {
-
+    if (x === undefined){
         return 0;
-
     } else {
         let value = x;
         function Sum(x) {
@@ -31,12 +30,10 @@ function sum(x) {
 
                 return Sum;
             }
-
             return value;
         }
         return Sum;
     }
-
 }
 
 module.exports = {
