@@ -26,12 +26,10 @@ function sum (x) {
         x += addendum;
 
         return accumSum;
-    }
+    };
 }
 
 module.exports = {
     customBind,
     sum
 };
-
-
