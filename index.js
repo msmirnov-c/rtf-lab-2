@@ -23,6 +23,10 @@ function customBind (func, context, ...args) {
  */
 
 function sum (x) {
+    if (x === undefined) {
+        return 0;
+    }
+
     let result = x;
 
     return function sumFunc (y) {
