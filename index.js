@@ -23,13 +23,13 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    let resultSum = x;
+/*    let resultSum = x;
 
     return function (y) {
         resultSum += y;
 
         return resultSum;
-    };
+    }; */
 }
 
 module.exports = {
