@@ -30,7 +30,7 @@ function sum (x) {
     let result = x;
 
     return function sumFunc (y) {
-        if (typeof y === 'number') {
+        if (y !== undefined) {
             result += y;
 
             return sumFunc;
