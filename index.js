@@ -7,10 +7,9 @@
  */
 function customBind (func, context, ...args) {
     // code
-    const ourArgs = [].slice.call(arguments);
 
     return function () {
-        func.apply(context, ourArgs.concat(...args));
+        func.apply(context, args.slice(2));
     };
 }
 
