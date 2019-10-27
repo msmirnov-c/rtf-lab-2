@@ -27,17 +27,17 @@ function sum (x) {
 
     storage += x;
 
-    function bje (x) {
+    function sumOfNumbers (x) {
         if (isNaN(x)) {
-            return storage
+            return storage;
         }
 
         storage += x;
 
-        return bje;
+        return sumOfNumbers;
     }
 
-    return bje;
+    return sumOfNumbers;
 }
 
 module.exports = {
