@@ -24,13 +24,18 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-/*    let resultSum = x;
+    let resultSum = 0;
+    if (x === undefined) {
+        return resultSum;
+    } else {
+        resultSum = x;
+    }
 
     return function (y) {
         resultSum += y;
 
         return resultSum;
-    }; */
+    };
 }
 
 module.exports = {
