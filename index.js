@@ -6,6 +6,7 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
+    //code
 
     return function () {
         const necessaryElements = [].slice(arguments);
