@@ -6,10 +6,10 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    // code
 
     return function () {
-        func.apply(context, args.slice(2));
+        const necessaryElements = [].slice(arguments);
+        func.apply(context, necessaryElements.concat(...args));
     };
 }
 
