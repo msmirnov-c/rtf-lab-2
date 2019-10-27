@@ -6,7 +6,7 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    return function change (...functionArgs) {
+    return function (...functionArgs) {
         return func.apply(context, args.concat(functionArgs));
     };
 }
@@ -14,25 +14,24 @@ function customBind (func, context, ...args) {
 /* ============================================= */
 
 function sum (x) {
-    let firstAddendum = x;
-    if (firstAddendum === undefined) {
+    if (x === undefined) {
         return 0;
     }
 
-    function nextSum (addendum) {
+    return function accumSum (addendum) {
         if (addendum === undefined) {
-            return firstAddendum;
+            return x;
         }
 
-        firstAddendum += addendum;
+        x += addendum;
 
-        return nextSum;
+        return accumSum;
     }
-
-    return nextSum;
 }
 
 module.exports = {
     customBind,
     sum
 };
+
+
