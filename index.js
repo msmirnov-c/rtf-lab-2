@@ -6,7 +6,7 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    return (arguments) => func.call(context, args, arguments);
+    return (newArguments) => func.call(context, args, newArguments);
 }
 
 function sum (x) {
