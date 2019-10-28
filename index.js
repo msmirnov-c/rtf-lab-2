@@ -5,21 +5,19 @@
  * @param {Array<any>} args массив аргументов
  * @return {Function} функция с нужным контекстом
  */
-function customBind (func, context, ...args) {
-    // code
+function customBind(func, context, ...args) {
+    return function () {
+        func.call(context, args, newArgs)
+    }
 }
 
-/* ============================================= */
-
-/**
- * Напишите функцию sum, вычисляющую суммы подобным образом:
- * sum(1)(2)( ) // 3
- * sum(1)(2)(3)( ) // 6
- * sum :: Number -> sum
- * sum :: void -> Number
- */
-function sum (x) {
-    // code
+function sum(x) {
+    if (x !== undefined) {
+        return [].reduce.call(arguments, function (a, b) {
+            return a + b;
+        });
+    };
+    return 0;
 }
 
 module.exports = {
