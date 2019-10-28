@@ -9,7 +9,7 @@ function sum (x) {
         return 0;
     }
 
-    function sumNext (nextElement) {
+    return function sumNext (nextElement) {
         if (nextElement === undefined) {
             return x;
         }
@@ -17,9 +17,7 @@ function sum (x) {
         x += nextElement;
 
         return sumNext;
-    }
-
-    return sumNext;
+    };
 }
 module.exports = {
     customBind,
