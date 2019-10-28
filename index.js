@@ -17,11 +17,14 @@ function sum (x) {
     }
 
     return function subSum (number) {
-        if (number !== undefined) {
-            return sum(x + number);
+        if (number === undefined) {
+            return x;
         }
 
-        return x;
+        return sum(x + number);
+        }
+
+
     };
 }
 
