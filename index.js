@@ -6,15 +6,8 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    // let f = func.bind(context, ...args);
-    // return f;  =)
-    const defaultArgsArr = args;
-
     return function (...newArgs) {
-        const newArgsArr = newArgs;
-        const allArgsArr = defaultArgsArr.concat(newArgsArr);
-
-        return func.apply(context, allArgsArr);
+        return func.apply(context, args.concat(newArgs));
     };
 }
 
@@ -32,14 +25,12 @@ function sum (x) {
         return 0;
     }
 
-    const total = x;
-
-    return (nextNumber) => {
+    return function (nextNumber) {
         if (nextNumber === undefined) {
-            return total;
+            return x;
         }
 
-        return sum(total + nextNumber);
+        return sum(x + nextNumber);
     };
 }
 
