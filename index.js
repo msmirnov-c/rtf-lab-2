@@ -28,7 +28,7 @@ function sum (x) {
         };
     }
 
-    return x;
+    return 0;
 }
 
 module.exports = {
