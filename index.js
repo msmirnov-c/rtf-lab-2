@@ -6,19 +6,20 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    return (newArguments) => func.call(context, args, newArguments);
+    return (newArguments) => func.call(context, ...args, newArguments);
 }
 
 function sum (x) {
     if (x === undefined) {
         return 0;
+    } else {
+        return function subSum (number) {
+            if (number === undefined) return x;
+
+            return sum(x + number);
+        };
     }
 
-    return function subSum (number) {
-        if (number === undefined) return x;
-
-        return sum(x + number);
-    };
 }
 
 module.exports = {
