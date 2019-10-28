@@ -5,18 +5,19 @@
  * @param {Array<any>} args массив аргументов
  * @return {Function} функция с нужным контекстом
  */
-function customBind(func, context, ...args) {
+function customBind (func, context, ...args) {
     return function () {
-        func.call(context, args, newArgs)
-    }
+        func.call(context, args, newArgs);
+    };
 }
 
-function sum(x) {
+function sum (x) {
     if (x !== undefined) {
         return [].reduce.call(arguments, function (a, b) {
             return a + b;
         });
     };
+
     return 0;
 }
 
