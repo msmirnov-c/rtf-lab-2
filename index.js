@@ -4,10 +4,14 @@ function customBind (func, context, ...args) {
     };
 }
 
-function sum (x = 0) {
+function sum (x) {
+    if (x === undefined) {
+        return x;
+    }
+
     var count = x;
 
-    return function by(y) {
+    return function by (y) {
         if (y === undefined) {
             return count;
         } else {
