@@ -23,15 +23,14 @@ function customBind (func, context, ...args) {
 function sum (x) {
     if (x === undefined) return 0;
 
-    let count = x;
     function newSum (nsum) {
         if (nsum !== undefined) {
-            count += nsum;
+            x += nsum;
 
             return newSum;
         }
 
-        return count;
+        return x;
     }
 
     return newSum;
