@@ -7,7 +7,6 @@
  */
 function customBind (func, context, ...args) {
     return (arguments) => func.call(context, args, arguments);
-    };
 }
 
 function sum (x) {
