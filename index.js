@@ -22,14 +22,10 @@ function customBind (func, context, ...args) {
  */
 let result = 0;
 function sum (x) {
-    if (result === undefined) {
-        return result;
+    if (x === undefined) {
+        return 0;
     }
-    
-    else {
-        result += x;
-    }
-    return result;
+   return (newSum) => (newSum === undefined) ? x : sum (x += newSum);
 }
 
 module.exports = {
