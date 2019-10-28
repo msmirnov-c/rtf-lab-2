@@ -5,22 +5,19 @@ function customBind (func, context, ...args) {
 }
 
 function sum (x) {
-    let tempSum = x;
-    function sumNextBrackets (nextArg) {
-        if (nextArg === undefined) {
-            return tempSum;
-        }
-
-        tempSum += nextArg;
-
-        return sumNextBrackets;
-    }
-
-    if (tempSum === undefined) {
+    if (x === undefined) {
         return 0;
     }
 
-    return sumNextBrackets;
+    return function findSum (nextArg) {
+        if (nextArg === undefined) {
+            return x;
+        }
+
+        x += nextArg;
+
+        return findSum;
+    };
 }
 
 module.exports = {
