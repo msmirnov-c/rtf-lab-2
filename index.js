@@ -18,7 +18,7 @@ function sum (x) {
 
     return function subSum (number) {
         if (number !== undefined) {
-            return sum (x + number);
+            return sum(x + number);
         }
 
         return x;
