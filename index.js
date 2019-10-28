@@ -33,7 +33,7 @@ function sum (x) {
         First += Next;
 
         return BoyNextDoor;
-    }
+    };
 }
 
 module.exports = {
