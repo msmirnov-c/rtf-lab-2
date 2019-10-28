@@ -1,6 +1,6 @@
 function customBind (func, context, ...args) {
     return function () {
-        return func.apply(context, args);
+        return func.apply(context, [...args, ...arguments]);
     };
 }
 
@@ -9,7 +9,7 @@ function sum (x) {
         return 0;
     }
 
-    var count = x;
+    let count = x;
 
     return function by (y) {
         if (y === undefined) {
