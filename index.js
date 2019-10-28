@@ -12,19 +12,17 @@ function customBind (func, context, ...args) {
 }
 
 function sum (x) {
-    if (x !== undefined) {
+    if (x === undefined) {
+        return 0;
+    } else {
         return function subSum (number) {
             if (number !== undefined) {
-                x += number;
-
-                return x;
+                return sum(x + number);
             }
 
             return x;
         };
     }
-
-    return 0;
 }
 
 module.exports = {
