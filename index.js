@@ -19,7 +19,6 @@ function sum (x) {
             return sum(x + number);
         };
     }
-
 }
 
 module.exports = {
