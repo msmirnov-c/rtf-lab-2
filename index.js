@@ -6,20 +6,29 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    // code
+    const arrArgs = [].slice.call(arguments, 2); // массив аргументов, переданных изначально
+
+    return function () {
+        const arrOfAllArgs = arrArgs.concat([].slice.call(arguments)); // конечный массив аргументов
+
+        return func.apply(context, arrOfAllArgs);
+    };
 }
 
 /* ============================================= */
 
-/**
- * Напишите функцию sum, вычисляющую суммы подобным образом:
- * sum(1)(2)( ) // 3
- * sum(1)(2)(3)( ) // 6
- * sum :: Number -> sum
- * sum :: void -> Number
- */
 function sum (x) {
-    // code
+    if (x !== undefined) {
+        return function (num) {
+            if (num !== undefined) {
+                return sum(x + num);
+            } else {
+                return x;
+            }
+        };
+    }
+
+    return 0;
 }
 
 module.exports = {
