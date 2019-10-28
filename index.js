@@ -26,6 +26,7 @@ function sum (x) {
         if (Next === undefined) {
             return First;
         }
+        
         First += Next;
 
         return BoyNextDoor;
