@@ -7,7 +7,7 @@
  */
 function customBind (func, context, ...args) {
     return function (...funcArgs) {
-        func.apply(context, args.concat(funcArgs));
+        return func.apply(context, args.concat(funcArgs));
     };
 };
 
@@ -26,16 +26,14 @@ function sum (x) {
         return 0;
     }
 
-    let result = x;
-
     return function sumFunc (y) {
         if (y !== undefined) {
-            result += y;
+            x += y;
 
             return sumFunc;
         }
 
-        return result;
+        return x;
     };
 };
 
