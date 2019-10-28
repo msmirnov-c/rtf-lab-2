@@ -6,8 +6,9 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    return func.apply(context, args.slice.call(arguments));
-} // слава https://learn.javascript.ru/call-apply
+    return func.apply(context, ...args.slice.call(arguments));
+}
+// слава https://learn.javascript.ru/call-apply
 /* ============================================= */
 /**
  * Напишите функцию sum, вычисляющую суммы подобным образом:
