@@ -7,7 +7,7 @@
  */
 function customBind (func, context, ...args) {
     return function () {
-        return func.apply(context, ...args.slice.call(arguments));
+        return func.apply(context, ...args.concat(arguments));
     };
 }
 // слава https://learn.javascript.ru/call-apply
