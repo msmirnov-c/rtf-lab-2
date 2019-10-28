@@ -6,7 +6,9 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    return (...newArgs) => func.apply(context, [...args, ...arguments]);
+    return function () {
+        return func.apply(context, ...args.slice.call(arguments));
+    };
 }
 // слава https://learn.javascript.ru/call-apply
 /* ============================================= */
