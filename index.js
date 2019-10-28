@@ -6,7 +6,7 @@ function customBind (func, context, ...args) {
 
 function sum (x) {
     if (x === undefined) {
-        return x;
+        return 0;
     }
 
     var count = x;
