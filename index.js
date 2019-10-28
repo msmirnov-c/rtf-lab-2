@@ -21,20 +21,18 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    let currentSum = x;
-
-    if (currentSum === undefined) {
+    if (x === undefined) {
         return 0;
     }
 
     function summing (y) {
         if (y !== undefined) {
-            currentSum += y;
+            x += y;
 
             return summing;
         }
 
-        return currentSum;
+        return x;
     }
 
     return summing;
