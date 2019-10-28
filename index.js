@@ -9,16 +9,14 @@ function sum (x) {
         return 0;
     }
 
-    let count = x;
-
-    return function by (y) {
+    return function innerSumFunction (y) {
         if (y === undefined) {
-            return count;
-        } else {
-            count += y;
-
-            return by;
+            return x;
         }
+
+        x += y;
+
+        return innerSumFunction;
     };
 }
 
