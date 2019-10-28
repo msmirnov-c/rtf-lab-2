@@ -13,15 +13,14 @@ function customBind (func, context, ...args) {
 
 function sum (x) {
     if (x !== undefined) {
-        return function subSum(number) {
+        return function subSum (number) {
             if (number !== undefined) {
-                return x += number;
+                x += number;
+                return x;
             }
 
             return x;
-
-            return subSum;
-        };   
+        };
     }
 
     return 0;
