@@ -5,9 +5,9 @@
 * @param {Array<any>} args массив аргументов
 * @return {Function} функция с нужным контекстом
 */
-function customBind (func, context, ...args) {
-    return function (...arguments) {
-        return func.apply(context, args.concat(arguments));
+function customBind(func, context, ...args) {
+    return function (...arg) {
+        return func.apply(context, args.concat(arg));
     };
 }
 /* ============================================= */
@@ -19,17 +19,17 @@ function customBind (func, context, ...args) {
 * sum :: Number -> sum
 * sum :: void -> Number
 */
-function sum (x) {
-   
-    function Sum (x) {
+function sum(x) {
+    if (x === undefined) return 0;
+    function Sum(x) {
         if (x !== undefined) {
-            value += x;
+            value += this.Sum(x);
 
             return Sum;
         }
         return value;
     }
-
+    
     return Sum;
 }
 
