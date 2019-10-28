@@ -1,27 +1,26 @@
-/**
- * Создайте собственную реализацию функции bind
- * @param {Function} func передаваемая функция
- * @param {any} context контекст
- * @param {Array<any>} args массив аргументов
- * @return {Function} функция с нужным контекстом
- */
 function customBind (func, context, ...args) {
-    // code
+    return function (...funcArgs) {
+        return func.apply(context, args.concat(funcArgs));
+    };
 }
 
-/* ============================================= */
-
-/**
- * Напишите функцию sum, вычисляющую суммы подобным образом:
- * sum(1)(2)( ) // 3
- * sum(1)(2)(3)( ) // 6
- * sum :: Number -> sum
- * sum :: void -> Number
- */
 function sum (x) {
-    // code
-}
+    if (x === undefined) {
+        return 0;
+    }
 
+    function sumNext (nextElement) {
+        if (nextElement === undefined) {
+            return x;
+        }
+
+        x += nextElement;
+
+        return sumNext;
+    }
+
+    return sumNext;
+}
 module.exports = {
     customBind,
     sum
