@@ -6,8 +6,8 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-        return func.apply(context, args.slice.call(arguments));
-    }//слава https://learn.javascript.ru/call-apply
+    return func.apply(context, args.slice.call(arguments));
+}//слава https://learn.javascript.ru/call-apply
 /* ============================================= */
 /**
  * Напишите функцию sum, вычисляющую суммы подобным образом:
@@ -16,18 +16,20 @@ function customBind (func, context, ...args) {
  * sum :: Number -> sum
  * sum :: void -> Number
  */
-function sum (x)
-{
+function sum (x){
     let First = x;
-    if(First===undefined){
+    if (First === undefined) {
         return 0;
     }
-    function BoyNextDoor(Next){
-    if(Next===undefined){
-        return First;
+    
+    function BoyNextDoor (Next) {
+        if (Next === undefined) {
+        
+            return First;
     }
-    First+= Next;
-    return BoyNextDoor;
+        First += Next;
+        
+        return BoyNextDoor;
     }
 return BoyNextDoor;
 }
