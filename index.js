@@ -25,16 +25,17 @@ function sum (x) {
         return 0;
     }
 
-    let tempSum = x;
-    function newTempSum (newTemp) {
-        if (newTemp !== undefined) {
-            tempSum += newTemp;
+    function updateSum (addend) {
+        if (addend === undefined) {
+            return x;
+        } else {
+            x += addend;
 
-            return newTempSum;
-        } else return tempSum;
+            return updateSum;
+        }
     }
 
-    return newTempSum;
+    return updateSum;
 }
 
 module.exports = {
