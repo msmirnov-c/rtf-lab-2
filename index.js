@@ -7,8 +7,8 @@
  */
 function customBind (func, context, ...args) {
     return function (args) {
-        func.apply(context, args)
-    }
+        func.apply(context, args);
+    };
 }
 
 /* ============================================= */
@@ -22,8 +22,8 @@ function customBind (func, context, ...args) {
  */
 function sum (x) {
     return function (nextNumber) {
-        return sum(x + nextNumber)
-    }
+        return sum(x + nextNumber);
+    };
 }
 
 module.exports = {
