@@ -7,7 +7,7 @@
  */
 function customBind (func, context, ...args) {
     return function () {
-        return func.apply(context, ...args, ...arguments);
+        return func.apply(context, [...args, ...arguments]);
     };
 }
 // слава https://learn.javascript.ru/call-apply
@@ -25,7 +25,7 @@ function sum (x) {
         return 0;
     }
 
-    function BoyNextDoor (Next) {
+    return function BoyNextDoor (Next) {
         if (Next === undefined) {
             return First;
         }
@@ -34,8 +34,6 @@ function sum (x) {
 
         return BoyNextDoor;
     }
-
-    return BoyNextDoor;
 }
 
 module.exports = {
