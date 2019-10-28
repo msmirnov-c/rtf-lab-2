@@ -16,7 +16,7 @@ function sum (x) {
         return [].reduce.call(arguments, function (a, b) {
             return a + b;
         });
-    };
+    }
 
     return 0;
 }
