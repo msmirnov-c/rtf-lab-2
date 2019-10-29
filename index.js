@@ -18,11 +18,11 @@ function sum (x) {
 
     return function sum (newElement) {
         if (newElement !== undefined) {
-            x += nextElement;
+            x += newElement;
 
             return sum;
         }
-        
+
         return x;
     };
 }
