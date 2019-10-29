@@ -24,16 +24,15 @@ function sum (x) {
         return 0;
     }
     else {
-    
-    return function NewSum (NewElement) {
-        if (NewElement === undefined) {
+        return function NewSum (NewElement) {
+            if (NewElement === undefined) {
             return x;
-        }
+            }
 
-        x += NewElement;
+            x += NewElement;
 
-        return NewSum;
-    };
+            return NewSum;
+        };
     }
 }
 
