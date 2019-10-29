@@ -20,10 +20,10 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (x === undefined) 
+    if (x === undefined){
         return 0;
     
-    else {
+    }else 
         return function NewSum (NewElement) {
             if (NewElement === undefined) {
                 return x;
@@ -34,7 +34,7 @@ function sum (x) {
             return NewSum;
         };
     }
-}
+
 
 module.exports = {
     customBind,
