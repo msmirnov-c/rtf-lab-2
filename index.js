@@ -15,7 +15,7 @@
 function customBind (func, context, ...args) {
     return function (...newArguments) {
         return func.apply(context, args.concat(newArguments));
-    }
+    };
 }
 
 function sum (x) {
@@ -23,7 +23,7 @@ function sum (x) {
         return 0;
     }
 
-    return (...newArguments) => (x === undefined) ? x : sum (x += arguments);
+    return (...newArguments) => (x === undefined) ? x : sum(x += arguments);
 }
 
 module.exports = {
