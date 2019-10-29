@@ -22,7 +22,7 @@ function sum (x) {
         if (n === undefined) {
             return summator;
         }
-        
+
         summator += n;
 
         return tmp;
