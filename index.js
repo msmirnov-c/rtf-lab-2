@@ -5,9 +5,8 @@
  * @param {Array<any>} args массив аргументов
  * @return {Function} функция с нужным контекстом
  */
-function customBind (func, context, ...args) {
+function customBind(func, context, ...args) {
     // code
-    // test commit
 }
 
 /* ============================================= */
@@ -19,23 +18,23 @@ function customBind (func, context, ...args) {
  * sum :: Number -> sum
  * sum :: void -> Number
  */
-let n = 0;
 
-function sum (x) {
+function sum(x) {
     // code
-    if (typeof (x) !== 'number') {
-        if (n === 0) {
-            x = 0;
-        } else {
-            return n;
-        }
-    }
+    let n = 0;
 
-    x += n;
-    n = x;
+    if (typeof (x) !== 'number') {
+        x = 0;
+    }
+    
+    return function (x) {
+        n += x;
+        return n;
+    };
 }
 
 module.exports = {
     customBind,
     sum
 };
+
