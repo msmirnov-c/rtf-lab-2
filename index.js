@@ -5,7 +5,7 @@
  * @param {Array<any>} args массив аргументов
  * @return {Function} функция с нужным контекстом
  */
-function customBind (func, context, ...args) {
+function customBind(func, context, ...args) {
     // code
 }
 
@@ -19,15 +19,19 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 
-function sum (x) {
+function sum(x) {
     // code
     let n = 0;
 
-    if (typeof (x) !== 'number') {
+    if (typeof (x) !== 'number' && n === 0) {
         x = 0;
     }
 
     return function (x) {
+        if (typeof (x) !== 'number' && n > 0) {
+
+            return n;
+        }
         n += x;
 
         return n;
