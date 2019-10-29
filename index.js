@@ -7,19 +7,19 @@
  */
 function customBind (func, context, ...args) {
     var result = (...newargs) => func.apply(context, ...args);
+    
     return result;
 }
 
 function sum (x) {
+    if (x === undefined) return 0;
     let summator = x;
-    function tmp (n) {
+    return function tmp (n) {
+        if (n === undefined) return summator 
         summator += n;
 
         return tmp;
     }
-    if (tmp.toString === ' ') { return summator; }
-
-    return tmp;
 }
 module.exports = {
     customBind,
