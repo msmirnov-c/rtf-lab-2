@@ -26,10 +26,11 @@ function sum (x) {
     if (typeof (x) !== 'number') {
         x = 0;
     }
+
     return function (x) {
         n += x;
-        return n;
 
+        return n;
     };
 }
 
