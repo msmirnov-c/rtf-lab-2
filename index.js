@@ -7,7 +7,6 @@
  */
 function customBind (func, context, ...args) {
     // code
-    return null;
 }
 
 /* ============================================= */
@@ -20,7 +19,18 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    // code
+    let res = x || 0;
+    const f = function (newX) {
+        res += (newX || 0);
+
+        return f;
+    };
+
+    f.toString = function () {
+        return res;
+    };
+
+    return f;
 }
 
 module.exports = {
