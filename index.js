@@ -8,8 +8,8 @@
 
 function customBind (func, context, ...args) {
     return function () {
-        return func.apply(context).contact(...args)
-    }
+        return func.apply(context).contact(...args);
+    };
 }
 /* ============================================= */
 /**
@@ -20,13 +20,16 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (x === undefined){
-    x = 0;
-    return x 
+    if (x === undefined) {
+        x = 0;
+        return x;
+
     }
-    if (x !== undefined){
-    x += x
-    return x
+
+    if (x !== undefined) {
+        x += x;
+        
+        return x;
     }
 }
 
