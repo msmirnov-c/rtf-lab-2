@@ -23,7 +23,10 @@ function sum (x) {
     if (x === undefined) {
         return 0;
     }
+    
+    else{
 
+    
     return function NewSum (NewElement) {
         if (NewElement === undefined) {
             return x;
@@ -33,6 +36,7 @@ function sum (x) {
 
         return NewSum;
     };
+    }
 }
 
 module.exports = {
