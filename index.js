@@ -13,44 +13,18 @@
  */
 
 function customBind (func, context, ...args) {
-
     return function (...newArguments) {
-        
         return func.apply(context, args.concat(newArguments));
     }
-
 }
 
-
-
-/* ============================================= */
-
-
-
-/**
-
- * Напишите функцию sum, вычисляющую суммы подобным образом:
-
- * sum(1)(2)( ) // 3
-
- * sum(1)(2)(3)( ) // 6
-
- * sum :: Number -> sum
-
- * sum :: void -> Number
-
- */
-
 function sum (x) {
-    
     if (x === undefined) {
         return 0;
     }
 
     return (...newArguments) => (x === undefined) ? x : sum (x += arguments);
 }
-
-
 
 module.exports = {
 
