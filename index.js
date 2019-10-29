@@ -19,19 +19,23 @@ function customBind (func, context, ...args) {
  * sum :: Number -> sum
  * sum :: void -> Number
  */
-function sum (x) {
-    if (x === undefined) {
-        x = 0;
-
-        return x;
+function sum(x) {
+    if (x === undefined){ 
+        x = 0; 
+        return x; 
     }
+    let sum1;
+    sum1 = x;
 
-    if (x !== undefined) {
-        x += x;
+    //Вот тут начинается рекурсия
+    return function NewSum(NewElement) {
+        if (NewElement === undefined)
+        return sum1;
 
-        return x;
+        sum1 += NewElement;
+        return NewSum;
     }
-}
+}    
 
 module.exports = {
     customBind,
