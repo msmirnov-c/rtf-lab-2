@@ -34,7 +34,7 @@ function sum (x) {
             }        
 }
 
-/*module.exports = {
+module.exports = {
     customBind,
     sum
-};*/
+};
