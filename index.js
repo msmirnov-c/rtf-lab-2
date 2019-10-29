@@ -5,7 +5,7 @@
  * @param {Array<any>} args массив аргументов
  * @return {Function} функция с нужным контекстом
  */
-function customBind(func, context, ...args) {
+function customBind (func, context, ...args) {
     // code
     return (...params) => func.apply(context, args.concat(params));
 }
@@ -21,7 +21,8 @@ function customBind(func, context, ...args) {
  */
 function sum (x) {
     if (x === undefined) return 0;
-    let sumRes = (current) => {
+
+    const sumRes = (current) => {
         if (current === undefined) return x;
 
         x += current;
