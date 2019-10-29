@@ -16,8 +16,8 @@ function sum (x) {
         return 0;
     }
 
-    let funcSum = x;
-    
+    const funcSum = x;
+
     return funcSum;
 }
 
