@@ -26,7 +26,7 @@ function sum (x) {
 
     return function NewSum (NewElement) {
         if (NewElement === undefined) {
-            return NewElement;
+            return x;
         }
 
         x += NewElement;
