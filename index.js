@@ -22,7 +22,6 @@ function customBind (func, context, ...args) {
 function sum (x) {
     if (x === undefined) {
         return 0;
-
     } else {
         return function NewSum (NewElement) {
             if (NewElement === undefined) {
@@ -34,6 +33,7 @@ function sum (x) {
             return NewSum;
         };
     };
+    
 }
 
 module.exports = {
