@@ -5,7 +5,7 @@
  * @param {Array<any>} args массив аргументов
  * @return {Function} функция с нужным контекстом
  */
-function customBind(func, context, ...args) {
+function customBind (func, context, ...args) {
     // code
     // test commit
 }
@@ -21,10 +21,12 @@ function customBind(func, context, ...args) {
  */
 let n = 0;
 
-function sum(x) {
+function sum (x) {
     // code
-    if (typeof (x) !== 'number')
+    if (typeof (x) !== 'number') {
         x = 0;
+    }
+
     x += n;
     n = x;
 }
