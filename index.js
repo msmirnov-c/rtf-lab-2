@@ -20,7 +20,7 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (x === undefined){
+    if (x === undefined) {
         x = 0;
 
         return x;
@@ -31,9 +31,11 @@ function sum (x) {
 
     return function NewSum (NewElement) {
         if (NewElement === undefined) {
-        return sum1;
-            }
+            return sum1;
+        }
+
         sum1 += NewElement;
+        
         return NewSum;
     };
 }
