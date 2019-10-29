@@ -5,7 +5,7 @@
  * @param {Array<any>} args массив аргументов
  * @return {Function} функция с нужным контекстом
  */
-function customBind (func, context, ...args) {
+function customBind(func, context, ...args) {
     // code
     return (...params) => func.apply(context, args.concat(params));
 }
@@ -20,19 +20,16 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (x === undefined) {
-        return 0;
-    }
+    if (x === undefined) return 0;
+    let sumRes = (current) => {
+        if (current === undefined) return x;
 
-    const finalResult = function (result, current) {
-        if (current === undefined) {
-            return result;
-        }
+        x += current;
 
-        return customBind(finalResult, this, result + current);
+        return sumRes;
     };
 
-    return customBind(finalResult, this, x);
+    return sumRes;
 }
 
 module.exports = {
