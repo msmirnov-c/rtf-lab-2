@@ -13,14 +13,15 @@ function customBind (func, context, ...args) {
 
 function sum (x) {
     if (x === undefined) {
-    return 0;
+        return 0;
     }
-    
+
     let funcSum = x;
+
     return function sum (y) {
         if (y !== undefined) {
             funcSum += y;
-    
+
             return sum;
         } else {
             return funcSum;
