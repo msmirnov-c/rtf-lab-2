@@ -30,6 +30,7 @@ function sum (x) {
 
     if (x !== undefined);
     x += x
+    return x
     };
 
 module.exports = {
