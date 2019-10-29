@@ -23,9 +23,7 @@ function sum (x) {
     if (x === undefined) {
         return 0;
     }
-    
-    else{
-
+    else {
     
     return function NewSum (NewElement) {
         if (NewElement === undefined) {
