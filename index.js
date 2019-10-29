@@ -31,7 +31,7 @@ function sum (x) {
             return x;
         }
 
-        sum1 += NewElement;
+        x += NewElement;
 
         return NewSum;
     };
