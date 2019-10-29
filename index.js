@@ -22,13 +22,13 @@ function customBind (func, context, ...args) {
 function sum (x) {
     if (x === undefined) {
         x = 0;
-        return x;
 
+        return x;
     }
 
     if (x !== undefined) {
         x += x;
-        
+
         return x;
     }
 }
