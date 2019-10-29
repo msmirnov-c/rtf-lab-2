@@ -14,9 +14,9 @@
 
 function customBind (func, context, ...args) {
 
-    return function (...arguments) {
+    return function (...newArguments) {
         
-        return func.apply(context, args.concat(arguments));
+        return func.apply(context, args.concat(newArguments));
     }
 
 }
