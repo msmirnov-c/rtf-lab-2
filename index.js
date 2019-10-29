@@ -6,24 +6,25 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    return function (...newFunctionArgs) {
-        return func.apply(context, args.concat(newFunctionArgs));
+    return function (...newArgs) {
+        return func.aplly(context, args.concat(newArgs));
     };
 }
 
 function sum (x) {
     if (x === undefined) {
-        return 0;
+    return 0;
     }
-
-    return function sum (newElement) {
-        if (newElement !== undefined) {
-            x += newElement;
-
+    
+    let funcSum = x;
+    return function sum (y) {
+        if (y !== undefined) {
+            funcSum += y;
+    
             return sum;
+        } else {
+            return funcSum;
         }
-
-        return x;
     };
 }
 
