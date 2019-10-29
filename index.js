@@ -21,11 +21,12 @@ function customBind (func, context, ...args) {
  */
 function sum (x) {
     if (x === undefined) {
+        
         return 0;
     }
 
-    return function NewSum (x) {
-        if (x === undefined) {
+    return function NewSum (NewElement) {
+        if (NewElement === undefined) {
             
             return x;
         }
