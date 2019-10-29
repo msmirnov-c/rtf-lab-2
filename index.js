@@ -26,12 +26,9 @@ function sum (x) {
         return x;
     }
 
-    let sum1;
-    sum1 = x;
-
     return function NewSum (NewElement) {
         if (NewElement === undefined) {
-            return sum1;
+            return x;
         }
 
         sum1 += NewElement;
