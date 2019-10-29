@@ -26,12 +26,12 @@ function sum (x) {
 
     return function NewSum (NewElement) {
         if (NewElement === undefined) {
-            return x;
+            return NewElement;
         }
 
         x += NewElement;
 
-        return x;
+        return NewSum;
     };
 }
 
