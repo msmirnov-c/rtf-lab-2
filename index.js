@@ -22,6 +22,8 @@ function customBind (func, context, ...args) {
  */
 function sum (x) {
     return function (nextNumber) {
+        if (nextNumber === undefined) return x;
+
         return sum(x + nextNumber);
     };
 }
