@@ -15,11 +15,14 @@ function sum (x) {
     if (x === undefined) {
         return 0;
     }
+
     let summator = x;
+
     return function tmp (n) {
         if (n === undefined) {
             return summator;
-        } 
+        }
+        
         summator += n;
 
         return tmp;
