@@ -23,7 +23,7 @@ function sum (x) {
         return 0;
     }
 
-    return (...newSum) => (newSum === undefined) ? x : sum (x += newSum);
+    return (...newSum) => (newSum === undefined) ? x : sum(x += newSum);
 }
 
 module.exports = {
