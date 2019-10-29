@@ -19,12 +19,14 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (x === undefined)
+    if (x === undefined) {
         return 0;
+    }
 
     let result = x;
- 
-    return (next) => next === undefined ? result : result += next;
+
+    const returned = (next) => next === undefined ? result : result += next;
+    return returned;
 }
 
 module.exports = {
