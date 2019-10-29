@@ -26,6 +26,7 @@ function sum (x) {
     if (x === undefined) {
         return 0;
     }
+
     let resultSum = x;
 
     return function func (y) {
