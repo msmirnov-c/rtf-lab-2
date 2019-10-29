@@ -32,8 +32,8 @@ function sum (x) {
 
             return NewSum;
         };
+
     };
-    
 }
 
 module.exports = {
