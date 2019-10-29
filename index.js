@@ -7,6 +7,7 @@
  */
 function customBind (func, context, ...args) {
     // code
+    return (...params) => func.apply(context, args.concat(params));
 }
 
 /* ============================================= */
@@ -19,7 +20,17 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    // code
+    if (x === undefined) return 0;
+
+    const sumRes = (current) => {
+        if (current === undefined) return x;
+
+        x += current;
+
+        return sumRes;
+    };
+
+    return sumRes;
 }
 
 module.exports = {
