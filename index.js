@@ -7,15 +7,11 @@
  */
 
 function customBind (func, context, ...args) {
-   return function(){
-       return func.apply(context);{
-        return func.concat(...args);
-       }
-   }
+    return function () {
+        return func.apply(context).contact(...args)
+    }
 }
-
 /* ============================================= */
-
 /**
  * Напишите функцию sum, вычисляющую суммы подобным образом:
  * sum(1)(2)( ) // 3
@@ -24,14 +20,15 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (x === undefined)
-    x = 0
+    if (x === undefined){
+    x = 0;
     return x 
-
-    if (x !== undefined);
+    }
+    if (x !== undefined){
     x += x
     return x
-    };
+    }
+}
 
 module.exports = {
     customBind,
