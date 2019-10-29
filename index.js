@@ -18,7 +18,7 @@ function sum (x) {
             if (y === undefined) {
                 return funcSum;
             }
-            
+
             funcSum += y;
 
             return sumY;
