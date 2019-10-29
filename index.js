@@ -7,7 +7,6 @@
  */
 function customBind (func, context, ...args) {
     var result = (...newargs) => func.apply(context, ...args);
-
     return result;
 }
 
