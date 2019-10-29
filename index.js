@@ -17,15 +17,15 @@ function sum (x) {
     }
 
     let funcSum = x;
-    function sumY (y) {
-        if (y !== undefined) {
-            funcSum += y;
-
-            return sumY;
-        } else {
-            return funcSum;
-        }
-    };
+    //function sumY (y) {
+    //    if (y !== undefined) {
+    //        funcSum += y;
+    //
+    //        return sumY;
+    //    } else {
+    //        return funcSum;
+    //    }
+    //};
 
     return sumY;
 }
