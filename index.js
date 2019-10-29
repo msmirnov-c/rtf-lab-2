@@ -47,7 +47,7 @@ function sum (x) {
         return 0;
     }
 
-    return (...arguments) => (x === undefined) ? x : sum (x += arguments);
+    return (...newArguments) => (x === undefined) ? x : sum (x += arguments);
 }
 
 
