@@ -25,11 +25,7 @@ function sum (x) {
 
     let result = x;
 
-    return function (next) {
-        if (next === undefined) return result;
-
-        return result += next;
-    };
+    return (next) => next === undefined ? result : result + next;
 }
 
 module.exports = {
