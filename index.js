@@ -20,11 +20,14 @@ function customBind (func, context, ...args) {
  */
 function sum (x) {
     let result = x;
-    if (x == undefined) return 0;
+    if (x === undefined) return 0;
     else return getSumOfX;
+
     function getSumOfX(nextX){
-        if (nextX == undefined) return result;
+        if (nextX === undefined) return result;
+
         result += nextX;
+
         return getSumOfX;
     }
 }
