@@ -22,14 +22,14 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    let a = 0;
+    let a = x;
     if (x === 'number') {
         a = a + sum;
 
         return a;
     }
 
-    return x;
+    return a;
 }
 
 module.exports = {
