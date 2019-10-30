@@ -24,16 +24,13 @@ function sum (x) {
     // code
     if (x === undefined) return 0;
 
-    let result = x;
-    function sum2 (y) {
-        if (y === undefined) return result;
+    return function sum2 (y) {
+        if (y === undefined) return x;
 
-        result += y;
+        x += y;
 
         return sum2;
-    }
-
-    return sum2;
+    };
 }
 
 module.exports = {
