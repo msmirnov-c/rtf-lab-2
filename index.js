@@ -1,3 +1,10 @@
+function customBind (func, context, ...args) {
+  return function (newArgs) {
+      args[args.length] = newArgs;
+      return func.apply(context, args);
+  };
+}
+
 function sum (x) {
     if (x === undefined) {
         return 0;
@@ -13,5 +20,6 @@ function sum (x) {
 }
 
 module.exports = {
+    customBind,
     sum
 };
