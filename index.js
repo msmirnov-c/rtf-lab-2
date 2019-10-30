@@ -11,9 +11,8 @@ function customBind (func, context, ...args) {
             context,
             args
         );
-    };    
+    };
 }
-
 
 /**
  * Напишите функцию sum, вычисляющую суммы подобным образом:
