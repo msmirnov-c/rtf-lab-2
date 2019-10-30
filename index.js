@@ -6,7 +6,10 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    // code
+    return function (...yetArguments) {
+        return func.apply(context, args.concat(yetArguments));
+        // Думаю call будет достаточно и правильно...//
+    };
 }
 
 /* ============================================= */
@@ -19,7 +22,19 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    // code
+    if (x === undefined) {
+        return 0;
+    }
+
+    return nextNumber => {
+        if (nextNumber === undefined) {
+            return x;
+        }
+
+        if (nextNumber !== undefined) {
+            return sum(nextNumber + x);
+        }
+    };
 }
 
 module.exports = {
