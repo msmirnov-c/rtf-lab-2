@@ -21,15 +21,15 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (x === undefined) return 0; 
-
-    return function (next) { 
+    if (x === undefined) return 0;  
+    
+    return function  (next) { 
         if (next === undefined) return x;  
 
         x += next; 
         return sum(x); 
     }; 
-    
+
 }
 
 module.exports = {
