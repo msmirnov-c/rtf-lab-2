@@ -7,8 +7,8 @@
  */
 function customBind (func, context, ...args) {
     // code
-    return function (...argumnets) {
-        return func.apply(context, args.concat(argumnets));
+    return function (...arguments) {
+        return func.apply(context, args.concat(arguments));
     };
 }
 
@@ -25,7 +25,7 @@ function customBind (func, context, ...args) {
 function sum (x) {
     // code
     if (typeof (x) !== 'number') {
-        x = 0;
+        return 0;
     }
 
     return function (n) {
