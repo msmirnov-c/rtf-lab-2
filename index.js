@@ -12,21 +12,12 @@ function customBind (func, context, ...args) {
 }
 
 function sum (x) {
-    if (x === undefined) {
-        return 0;
-    }
+    let result = 0;
+    if (x === undefined) { return result; }
 
-    let funcSum = x;
+    result += x;
 
-    return function sum (y) {
-        if (y !== undefined) {
-            funcSum += y;
-
-            return sum;
-        } else {
-            return funcSum;
-        }
-    };
+    return sum;
 }
 
 module.exports = {
