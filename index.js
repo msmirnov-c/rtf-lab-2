@@ -33,7 +33,6 @@ function sum (x) {
     return getSum;
 }
 
-
 module.exports = {
     customBind,
     sum
