@@ -5,33 +5,28 @@
  * @param {Array<any>} args массив аргументов
  * @return {Function} функция с нужным контекстом
  */
-function customBind (func, context, ...args) {
-    const arrArgs = [].slice.call(arguments, 2); // массив аргументов, переданных изначально
-
-    return function () {
-        const arrOfAllArgs = arrArgs.concat([].slice.call(arguments)); // конечный массив аргументов
-
-        return func.apply(context, arrOfAllArgs);
-    };
+function customBind(func, context, ...args) {
+  return function(...newArgs) {
+    return func.apply(context, args.concat(newArgs));
+  };
 }
 
 /* ============================================= */
 
-function sum (x) {
-    if (x !== undefined) {
-        return function (num) {
-            if (num !== undefined) {
-                return sum(x + num);
-            } else {
-                return x;
-            }
-        };
-    }
-
+function sum(x) {
+  if (x === undefined) {
     return 0;
+  }
+
+  return function(num) {
+    if (num !== undefined) {
+      return sum(x + num);
+    }
+    return x;
+  };
 }
 
 module.exports = {
-    customBind,
-    sum
+  customBind,
+  sum
 };
