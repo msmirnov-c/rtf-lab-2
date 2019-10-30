@@ -26,10 +26,10 @@ function sum (x) {
         value: this.value === undefined ? x : this.value + x
     };
 
-    if (x === undefined){
+    if (x === undefined) {
         if (this.value === undefined) return 0;
         return this.value;
-    };
+    }
 
     return sum.bind(result);
 }
