@@ -6,7 +6,7 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    return function (yetArguments) {
+    return function (...yetArguments) {
         return func.apply(context, args.concat(yetArguments));
         // Думаю call будет достаточно и правильно...//
     };
