@@ -21,20 +21,18 @@ function customBind (func, context, ...args) {
 
 function sum (x) {
     // code
-    let n = 0;
-
-    if (typeof (x) !== 'number' && n === 0) {
+    if (typeof (x) !== 'number') {
         x = 0;
     }
 
-    return function (x) {
-        if (typeof (x) !== 'number' && n > 0) {
-            return n;
+    return function (n) {
+        if (typeof (n) !== 'number') {
+            return x;
         }
 
-        n += x;
+        x += n;
 
-        return n;
+        return x;
     };
 }
 
