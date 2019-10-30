@@ -36,7 +36,8 @@ function sum(x) {
             }
         } //Second part f-n SUM//
 
-    module.exports = {
-        customBind,
-        sum
-    };
+}
+module.exports = {
+    customBind,
+    sum
+};
