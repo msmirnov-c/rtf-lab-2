@@ -7,7 +7,7 @@
  */
 function customBind (func, context, ...args) {
     return function () {
-        return func.apply(context, ...args.concat(...args));
+        return func.apply(context, args.concat(arg));
     };
 };
 
@@ -19,7 +19,7 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (x === 'number') {
+    if (typeof(x) === 'number') {
         return x + sum;
     }
 
