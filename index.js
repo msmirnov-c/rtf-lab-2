@@ -24,7 +24,7 @@ function customBind(func, context, ...args) {
 function sum(x) {
     if (x === undefined) {
         return 0;
-    } //Первая часть//
+    }
 
     return nextNumber => {
         if (nextNumber === undefined) {
@@ -34,7 +34,7 @@ function sum(x) {
         if (nextNumber !== undefined) {
             return sum(nextNumber + x);
         }
-    }; //Second part f-n SUM//
+    };
 }
 
 module.exports = {
