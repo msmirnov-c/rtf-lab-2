@@ -23,17 +23,18 @@ function sum (x) {
     if (x === undefined) return 0;
 
     return function calcSum (value) {
-        switch (value) {
-        case (!undefined):
+
+        if (value !== undefined) {
             x = x + value;
 
             return calcSum;
-
-        case (undefined):
+        }
+        if (value === undefined) {
 
             return x;
         }
-    };
+    }
 }
+
 
 module.exports = { customBind, sum };
