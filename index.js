@@ -35,7 +35,6 @@ function sum (x) {
       return sum2;
     }
 }
-console.log(sum(1)(2)(3)( ));
 module.exports = {
     customBind,
     sum
