@@ -6,10 +6,14 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    // code
+ // Function.prototype.bind = function(context){
+    return function(...args){
+        return func.apply(
+            context,
+            args
+        )
+    }
 }
-
-/* ============================================= */
 
 /**
  * Напишите функцию sum, вычисляющую суммы подобным образом:
@@ -19,7 +23,13 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    
+    let a = 0;
+    if (x === 'number'){
+        a = a + x + sum;
+        return a;
+    }
+    return x;
+
 }
 
 module.exports = {
