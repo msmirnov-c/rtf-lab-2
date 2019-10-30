@@ -6,15 +6,14 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    Function.prototype.bind = function(context){
-        return function (...args) {
-            return func.apply(
-                context,
-                args
-            );
-        };    
-    };
+    return function (...args) {
+        return func.apply(
+            context,
+            args
+        );
+    };    
 }
+
 
 /**
  * Напишите функцию sum, вычисляющую суммы подобным образом:
