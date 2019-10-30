@@ -34,6 +34,7 @@ function sum (x) {
         if (y === undefined) {
             return resultSum;
         }
+
         resultSum += y;
 
         return func;
