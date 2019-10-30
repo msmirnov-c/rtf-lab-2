@@ -22,7 +22,7 @@ function customBind (func, context, ...args) {
  */
 function sum (x) {
     if (x === undefined) {
-        return null;
+        return 0;
     }
 
     return function anotherOneSum (next) {
