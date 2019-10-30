@@ -6,13 +6,13 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
- // Function.prototype.bind = function(context){
-    return function(...args){
+// Function.prototype.bind = function(context){
+    return function (...args) {
         return func.apply(
             context,
             args
-        )
-    }
+        );
+    };
 }
 
 /**
@@ -24,12 +24,13 @@ function customBind (func, context, ...args) {
  */
 function sum (x) {
     let a = 0;
-    if (x === 'number'){
+    if (x === 'number') {
         a = a + x + sum;
+
         return a;
     }
-    return x;
 
+    return x;
 }
 
 module.exports = {
