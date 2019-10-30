@@ -1,5 +1,5 @@
 function customBind (func, context, ...args) {
-    return function (newArgs) {
+    return function (...newArgs) {
         args[args.length] = newArgs;
 
         return func.apply(context, args);
