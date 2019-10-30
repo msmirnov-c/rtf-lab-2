@@ -1,6 +1,6 @@
 function customBind (func, context, ...args) {
-    return function () {
-        return func.apply(context, args);
+    return function (newArgs) {
+        return func.apply(context, args.concat(newArgs));
     };
 }
 
