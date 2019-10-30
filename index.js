@@ -6,13 +6,12 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    const a = function (func, context) {
-        const b = [].slice.call(...args, 2);
+    const b = [].slice.call(...args, 2);
+    
+    return function () {
+        var c = [].slice.call(...args);
 
-        return function () {
-            var c = [].slice.call(...args);
-
-            return func.apply(context, b.concat(c));
+        return func.apply(context, b.concat(c));
         };
     };
 }
