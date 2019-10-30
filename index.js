@@ -7,8 +7,7 @@
  */
 function customBind (func, context, ...args) {
     return function () {
-        context::func(...args);
-        /* func.apply(context, args); */
+        func.apply(context, args);
     };
 }
 
