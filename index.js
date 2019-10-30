@@ -7,6 +7,9 @@
  */
 function customBind (func, context, ...args) {
     // code
+    return function (...manyArguments) {
+        return func.apply(context, args.concat(manyArguments));
+    };
 }
 
 /* ============================================= */
@@ -17,9 +20,24 @@ function customBind (func, context, ...args) {
  * sum(1)(2)(3)( ) // 6
  * sum :: Number -> sum
  * sum :: void -> Number
+ * node.js?
  */
+
 function sum (x) {
     // code
+    if (typeof (x) !== 'number') {
+        return 0;
+    }
+
+    return function (n) {
+        if (typeof (n) !== 'number') {
+            return x;
+        }
+
+        x += n;
+
+        return sum(x);
+    };
 }
 
 module.exports = {
