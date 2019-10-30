@@ -20,6 +20,7 @@ function customBind (func, context, ...args) {
  */
 function sum (x) {
     if (typeof x === 'undefined') return 0;
+
     let result = x;
 
     function getSum (nextX) {
