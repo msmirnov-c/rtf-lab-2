@@ -6,7 +6,7 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    return function () {
+    return function (...arg) {
         return func.apply(context, args.concat(arg));
     };
 };
@@ -19,7 +19,7 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (typeof(x) === 'number') {
+    if (typeof (x) === 'number') {
         return x + sum;
     }
 
