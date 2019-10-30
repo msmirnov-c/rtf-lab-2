@@ -32,7 +32,7 @@ function sum (x) {
 
         x += n;
 
-        return x;
+        return sum(x);
     };
 }
 
