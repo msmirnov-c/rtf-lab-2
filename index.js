@@ -24,7 +24,7 @@ function customBind (func, context, ...args) {
 function sum (x) {
     if (x === 'number') {
 
-        return a + sum;
+        return x + sum;
     }
 
     return 0;
