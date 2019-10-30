@@ -7,7 +7,7 @@
  */
 function customBind(func, context, ...args) {
     return function(yetArguments) {
-        return func.call(context, args.concat(yetArguments));
+        return func.apply(context, args.concat(yetArguments));
         // Думаю call будет достаточно и правильно...//
     };
 }
