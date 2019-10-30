@@ -6,14 +6,10 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind(func, context, ...args) {
-    // code
-
-
-
-
-
-
-
+    return function(yetArguments) {
+        return func.call(context, args.concat(yetArguments));
+        // Думаю call будет достаточно и правильно...//
+    };
 }
 
 /* ============================================= */
