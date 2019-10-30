@@ -21,10 +21,11 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    return function sumNumbers(number) {
+    return function sumNumbers (number) {
         x += number;
+
         return sumNumbers;
-    }
+    };
 }
 
 module.exports = {
