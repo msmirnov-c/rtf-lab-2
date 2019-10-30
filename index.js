@@ -32,6 +32,6 @@ function sum (x) {
         if (value === undefined) {
             return x;
         }
-    }
+    };
 }
 module.exports = { customBind, sum };
