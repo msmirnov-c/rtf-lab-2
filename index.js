@@ -6,8 +6,8 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    return function (arrays) {
-        func.apply(context, args.concat(arrays));
+    return function (array) {
+        func.apply(context, args.concat(array));
     };
 }
 
@@ -25,10 +25,8 @@ function sum (x) {
         return 0;
     }
 
-    const temp = x;
-
-    return function anotherOneSum (next) {
-        return (next === undefined) ? temp : sum(temp + next);
+    return function (next) {
+        return (next === undefined) ? x : sum(x + next);
     };
 }
 
