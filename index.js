@@ -20,7 +20,14 @@ function customBind (func, context, ...args) {
  */
 function sum (x) {
     if (typeof (x) === 'number') {
-        return x + sum;
+        return function (a) {
+            if (typeof (a) === 'number'){
+                
+                return sum(x + a);
+            }
+
+            return x;
+        }
     }
 
     return 0;
