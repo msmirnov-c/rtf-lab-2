@@ -1,3 +1,4 @@
+    
 /**
  * Создайте собственную реализацию функции bind
  * @param {Function} func передаваемая функция
@@ -7,8 +8,8 @@
  */
 
 function customBind (func, context, ...args) {
-    return function () {
-        return func.apply(context).contact(...args);
+    return function (...Ayrat) {
+        return func.apply(context, args.concat(Ayrat));
     };
 }
 /* ============================================= */
@@ -22,17 +23,16 @@ function customBind (func, context, ...args) {
 function sum (x) {
     if (x === undefined) {
         return 0;
-    } else {
-        return function NewSum (NewElement) {
-            if (NewElement === undefined) {
-                return x;
-            }
+    }
 
-            x += NewElement;
+    return function NewSum (NewElement) {
+        if (NewElement === undefined) {
+            return x;
+        }
 
-            return NewSum;
-        };
-        
+        x += NewElement;
+
+        return NewSum;
     };
 }
 
