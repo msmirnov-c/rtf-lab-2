@@ -5,8 +5,10 @@
  * @param {Array<any>} args массив аргументов
  * @return {Function} функция с нужным контекстом
  */
-function customBind (func, context, ...args) {
-    // code
+function customBind (func, context) {
+    return function (...args) {
+        func.apply(context, args);
+    };
 }
 
 /* ============================================= */
