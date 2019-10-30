@@ -25,7 +25,7 @@ function sum (x) {
         if (number === undefined) {
             return x;
         }
-        
+
         x += number;
 
         return sumNumbers;
