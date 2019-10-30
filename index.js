@@ -26,16 +26,14 @@ function sum (x) {
     }
 
     return function sum2 (y) {
-            if (y !== undefined) {
-        x += y;
+        if (y !== undefined) {
+            x += y;
 
-        }
-
-        else return x;
+        } else return x;
 
         return sum2;
 
-    }
+    };
 }
 module.exports = {
     customBind,
