@@ -26,7 +26,7 @@ function sum (x) {
     }
 
     return function anotherOneSum (next) {
-        return (next === undefined) ? x : sum(x + next);
+        return (next !== undefined) ? sum(x + next) : x;
     };
 }
 
