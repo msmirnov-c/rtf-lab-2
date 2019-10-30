@@ -7,8 +7,8 @@
  */
 function customBind (func, context, ...args) {
     return function (...stillArgs) {
-      return func.call(context, args, stillArgs);
-    }
+        return func.call(context, args, stillArgs);
+    };
 }
 
 /* ============================================= */
@@ -26,13 +26,15 @@ function sum (x) {
     }
 
     return function sum2 (y) {
-      if (y !== undefined) {
+            if (y !== undefined) {
         x += y;
-      }
 
-      else return x;
+        }
 
-      return sum2;
+        else return x;
+
+        return sum2;
+
     }
 }
 module.exports = {
