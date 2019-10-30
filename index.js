@@ -27,6 +27,7 @@ function sum (x) {
         if (next === undefined) return x;
 
         x += next;
+
         return sum(x);
     };
 }
