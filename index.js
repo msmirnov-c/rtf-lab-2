@@ -15,6 +15,7 @@ function sum (x) {
         }
 
         x += newNumber;
+
         return sumOfNumbers;
     };
 }
