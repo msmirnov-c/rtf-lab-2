@@ -25,9 +25,18 @@ function sum(x) {
     if (x === undefined) {
         return 0;
     } //Первая часть//
-}
 
-module.exports = {
-    customBind,
-    sum
-};
+    return nextNumber => {
+            if (nextNumber === undefined) {
+                return x;
+            }
+
+            if (nextNumber !== undefined) {
+                return sum(nextNumber + x);
+            }
+        } //Second part f-n SUM//
+
+    module.exports = {
+        customBind,
+        sum
+    };
