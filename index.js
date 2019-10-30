@@ -10,11 +10,11 @@ function sum (x) {
     }
 
     return function sumOfNumbers (newNumber) {
-        if (newNumber !== undefined) {
-            x += newNumber;
+        if (newNumber === undefined) {
+            return x;
         }
-
-        return x;
+        x += newNumber;
+        return sumOfNumbers;
     };
 }
 
