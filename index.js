@@ -7,7 +7,7 @@
  */
 function customBind (func, context, ...args) {
     return function (arrays) {
-        func.apply(context, arrays.concat(args));
+        func.apply(context, args.concat(arrays));
     };
 }
 
@@ -21,7 +21,7 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    /* if (x === undefined) {
+    if (x === undefined) {
         return 0;
     }
 
@@ -29,7 +29,7 @@ function sum (x) {
 
     return function anotherOneSum (next) {
         return (next === undefined) ? temp : sum(temp + next);
-    }; */
+    };
 }
 
 module.exports = {
