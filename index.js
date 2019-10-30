@@ -21,6 +21,7 @@ function customBind (func, context, ...args) {
  * sum(1)(2)(3)( ) // 6
  * sum :: Number -> sum
  * sum :: void -> Number
+ *
  */
 function sum (x) {
     if (x === undefined) {
