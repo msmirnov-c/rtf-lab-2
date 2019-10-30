@@ -2,12 +2,12 @@
  * Создайте собственную реализацию функции bind
  * @param {Function} func передаваемая функция
  * @param {any} context контекст
- * @param {Array<any>} args массив аргументов
+ * @param {Array<any>} bindedArgs массив аргументов
  * @return {Function} функция с нужным контекстом
  */
-function customBind (func, context, ...args) {
-    return (...bindedArgs) => {
-        return func.apply(context, [].concat(args).concat(bindedArgs));
+function customBind (func, context, ...bindedArgs) {
+    return (...args) => {
+        return func.apply(context, bindedArgs.concat(args));
     };
 }
 
@@ -19,15 +19,13 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    const context = {
-        total: this.total ? this.total + x : x
-    };
-
     if (x === undefined) {
         return this.total === undefined ? 0 : this.total;
     }
 
-    return sum.bind(context);
+    return sum.bind({
+        total: this.total ? this.total + x : x
+    });
 }
 
 module.exports = {
