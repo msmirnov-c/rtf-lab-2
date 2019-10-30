@@ -13,6 +13,7 @@ function sum (x) {
         if (newNumber === undefined) {
             return x;
         }
+
         x += newNumber;
         return sumOfNumbers;
     };
