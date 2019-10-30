@@ -22,7 +22,9 @@ function customBind(func, context, ...args) {
  * sum :: void -> Number
  */
 function sum(x) {
-    // code
+    if (x === undefined) {
+        return 0;
+    } //Первая часть//
 }
 
 module.exports = {
