@@ -20,6 +20,7 @@ function customBind (func, context, ...args) {
  * sum(1)(2)(3)( ) // 6
  * sum :: Number -> sum
  * sum :: void -> Number
+ * node.js?
  */
 
 function sum (x) {
