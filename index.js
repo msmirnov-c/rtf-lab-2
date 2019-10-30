@@ -8,7 +8,7 @@
 function customBind (func, context, ...args) {
     return function () {
         return func.apply(context, args.concat(...arguments));
-    }
+    };
 }
 
 /* ============================================= */
@@ -22,14 +22,15 @@ function customBind (func, context, ...args) {
  */
 
 function sum (x) {
-    let result = {
+    const result = {
         value: this.value === undefined ? x : this.value + x
     };
-    if (x === undefined)
-    {
+
+    if (x === undefined){
         if (this.value === undefined) return 0;
         return this.value;
     };
+
     return sum.bind(result);
 }
 
