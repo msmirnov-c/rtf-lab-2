@@ -7,7 +7,7 @@
  */
 function customBind (func, context, ...args) {
     return function (...stillArgs) {
-        return func.apply(context, [args, stillArgs]);
+        return func.apply(context, args.concat(stillArgs));
     };
 }
 
