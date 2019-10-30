@@ -6,8 +6,8 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    return function () {
-        func.apply(context, args);
+    return function (...nextArgs) {
+        func.apply(context, [...args, ...nextArgs]);
     };
 }
 
@@ -21,15 +21,15 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    let res = x || 0;
+    let res = x;
+    if (res === undefined) return 0;
+
     const f = function (newX) {
-        res += (newX || 0);
+        if (newX === undefined) return res;
 
-        return f;
-    };
+        res += newX;
 
-    f.toString = function () {
-        return res;
+        return sum(res);
     };
 
     return f;
