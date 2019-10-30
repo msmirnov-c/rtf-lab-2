@@ -1,3 +1,4 @@
+
 /**
  * Создайте собственную реализацию функции bind
  * @param {Function} func передаваемая функция
@@ -5,21 +6,34 @@
  * @param {Array<any>} args массив аргументов
  * @return {Function} функция с нужным контекстом
  */
+
 function customBind (func, context, ...args) {
-    // code
+    return function (...Ayrat) {
+        return func.apply(context, args.concat(Ayrat));
+    };
 }
-
 /* ============================================= */
-
 /**
  * Напишите функцию sum, вычисляющую суммы подобным образом:
  * sum(1)(2)( ) // 3
- * sum(1)(2)(3)( ) // 6
+ * sum(1)(2)(3)(4)( ) // 10
  * sum :: Number -> sum
  * sum :: void -> Number
  */
 function sum (x) {
-    // code
+    if (x === undefined) {
+        return 0;
+    }
+
+    return function NewSum (NewElement) {
+        if (NewElement === undefined) {
+            return x;
+        }
+
+        x += NewElement;
+
+        return NewSum;
+    };
 }
 
 module.exports = {
