@@ -25,9 +25,11 @@ function sum (x) {
         return 0;
     }
 
-    return function (nextValue) {
+    return function temp (nextValue) {
         if (nextValue !== undefined) {
-            return sum(x + nextValue);
+            x = x + nextValue;
+
+            return temp;
         }
 
         if (nextValue === undefined) {
