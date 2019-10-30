@@ -28,7 +28,7 @@ function sum (x) {
 
     if (x === undefined) {
         if (this.value === undefined) return 0;
-        return this.value;
+            return this.value;
     }
 
     return sum.bind(result);
