@@ -28,14 +28,12 @@ function sum (x) {
         return 0;
     }
 
-    let resultSum = x;
-
     return function func (y) {
         if (y === undefined) {
-            return resultSum;
+            return x;
         }
 
-        resultSum += y;
+        x += y;
 
         return func;
     };
