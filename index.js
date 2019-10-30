@@ -23,7 +23,7 @@ function sum (x) {
     if (x === undefined) return 0;
     else return getSumOfX;
 
-    function getSumOfX(nextX){
+    function getSumOfX (nextX) {
         if (nextX === undefined) return result;
 
         result += nextX;
