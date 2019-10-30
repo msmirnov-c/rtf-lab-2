@@ -5,7 +5,7 @@
 * @param {Array<any>} args массив аргументов
 * @return {Function} функция с нужным контекстом
 */
-function customBind(func, context, ...args) {
+function customBind (func, context, ...args) {
     return function (...arg) {
         return func.apply(context, args.concat(arg));
     };
@@ -19,22 +19,20 @@ function customBind(func, context, ...args) {
 * sum :: Number -> sum
 * sum :: void -> Number
 */
-function sum(x) {
-    
+function sum (x) {
     if (x === undefined) return 0;
 
-    return function(value) {
+    return function (value) {
         switch (value) {
-            case (!undefined):
+        case (!undefined):
 
-                return sum(x + value);
+            return sum(x + value);
 
-            case (undefined):
+        case (undefined):
 
-                return x;
-
+            return x;
         }
-    }
+    };
 }
 
 module.exports = { customBind, sum };
