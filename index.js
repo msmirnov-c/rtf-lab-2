@@ -21,7 +21,10 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    return function sumNumbers (number) {
+    return x === undefined ? 0 : function sumNumbers (number) {
+        if (number === undefined) {
+                return x;
+            }
         x += number;
 
         return sumNumbers;
