@@ -25,8 +25,10 @@ function sum (x) {
         return 0;
     }
 
+    const temp = x;
+
     return function anotherOneSum (next) {
-        return (next !== undefined) ? sum(x + next) : x;
+        return (next === undefined) ? temp : sum(temp + next);
     };
 }
 
