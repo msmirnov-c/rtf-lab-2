@@ -1,21 +1,21 @@
 function customBind (func, context, ...args) {
-  return function() {
-    return func.apply(context, args);  }
+    return function () {
+        return func.apply(context, args);};
 }
 
-function sum(x) {
- if (x === undefined) {
-   return 0;
- }
+function sum (x) {
+    if (x === undefined) {
+        return 0;
+    }
  
- return function summation(nextArg) {
-  if (nextArg === undefined) {
-     return Number(this);
-   }
+    return function summation(nextArg) {
+        if (nextArg === undefined) {
+            return Number(this);
+    }
+
+    return summation.bind(this + nextArg);
    
-   return summation.bind(this + nextArg);
-   
- }.bind(x);
+    }.bind(x);
 }
 
 module.exports = {
