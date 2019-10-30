@@ -1,8 +1,7 @@
 function customBind (func, context, ...args) {
     return function (...newArgs) {
-        args[args.length] = newArgs;
 
-        return func.apply(context, args);
+        return func.apply(context, args.concat(newArgs));
     };
 }
 
