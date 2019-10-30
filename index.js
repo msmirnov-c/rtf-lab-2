@@ -21,12 +21,15 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if (x === undefined)
+    if (x === undefined) {
         return 0;
+    }
 
     return function (nextNum) {
-        if (nextNum === undefined)
+        if (nextNum === undefined) {
             return x;
+        }
+
         return sum(x + nextNum);
     };
 }
