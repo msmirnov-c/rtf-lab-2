@@ -35,8 +35,8 @@ function sum(x) {
                 return sum(nextNumber + x);
             }
         } //Second part f-n SUM//
-
 }
+
 module.exports = {
     customBind,
     sum
