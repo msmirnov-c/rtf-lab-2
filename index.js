@@ -7,6 +7,9 @@
  */
 function customBind (func, context, ...args) {
     // code
+    return function (...newNumbers) {
+        return func.bind(context, args.concat(newNumbers));
+    }
 }
 
 /* ============================================= */
@@ -20,6 +23,16 @@ function customBind (func, context, ...args) {
  */
 function sum (x) {
     // code
+    if (x === undefined) {
+        return 0;
+    }
+    function sumOfNumbers (newNumber) {
+        if (newNumber !== undefined) {
+            x += newNumber;
+        }
+        return x;
+    }
+    return sumOfNumbers;
 }
 
 module.exports = {
