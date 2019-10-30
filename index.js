@@ -20,17 +20,21 @@ function customBind(func, context, ...args) {
 * sum :: void -> Number
 */
 function sum(x) {
-    if (x === undefined) return 0;
-    function Sum(x) {
-        if (x !== undefined) {
-            value += this.Sum(x);
-
-            return Sum;
-        }
-        return value;
-    }
     
-    return Sum;
+    if (x === undefined) return 0;
+
+    return function(value) {
+        switch (value) {
+            case (!undefined):
+
+                return sum(x + value);
+
+            case (undefined):
+
+                return x;
+
+        }
+    }
 }
 
 module.exports = { customBind, sum };
