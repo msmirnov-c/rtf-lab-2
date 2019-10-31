@@ -29,9 +29,7 @@ function sum (x) {
             return calcSum;
         }
 
-        if (value === undefined) {
-            return x;
-        }
+        if (value === undefined) return x;
     };
 }
 module.exports = { customBind, sum };
