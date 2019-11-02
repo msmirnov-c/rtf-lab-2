@@ -20,19 +20,18 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    let First = x;
-    if (First === undefined) {
+    if (x === undefined) {
         return 0;
     }
 
-    return function BoyNextDoor (Next) {
-        if (Next === undefined) {
-            return First;
+    return function nextY (y) {
+        if (y === undefined) {
+            return x;
         }
 
-        First += Next;
+        x += y;
 
-        return BoyNextDoor;
+        return nextY;
     };
 }
 
