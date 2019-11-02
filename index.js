@@ -19,25 +19,19 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    let storage = 0;
-
-    if (isNaN(x)) {
-        return storage;
+    if (typeof x !== 'number') {
+        return 0;
     }
 
-    storage += x;
+    return function sumOfNumbers (newValue) {
+        if (typeof newValue === 'number') {
+            x += newValue;
 
-    function sumOfNumbers (x) {
-        if (isNaN(x)) {
-            return storage;
+            return sumOfNumbers;
         }
 
-        storage += x;
-
-        return sumOfNumbers;
-    }
-
-    return sumOfNumbers;
+        return x;
+    };
 }
 
 module.exports = {
