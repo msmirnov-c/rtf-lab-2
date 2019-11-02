@@ -14,13 +14,13 @@ function customBind (func, context, ...args) {
 function sum (x) {
     if (x === undefined) {
         return 0;
-    } else {
-        return function subSum (number) {
-            if (number === undefined) return x;
-
-            return sum(x + number);
-        };
     }
+
+    return function (number) {
+        if (number === undefined) return x;
+
+        return sum(x + number);
+    };
 }
 
 module.exports = {
