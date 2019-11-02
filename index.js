@@ -6,11 +6,12 @@
  * @return {Function} функция с нужным контекстом
  */
 function customBind (func, context, ...args) {
-    // code
+    return function () {
+        return func.apply(context, [...args, ...arguments]);
+    };
 }
-
+// слава https://learn.javascript.ru/call-apply
 /* ============================================= */
-
 /**
  * Напишите функцию sum, вычисляющую суммы подобным образом:
  * sum(1)(2)( ) // 3
@@ -19,7 +20,19 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    // code
+    if (x === undefined) {
+        return 0;
+    }
+
+    return function nextY (y) {
+        if (y === undefined) {
+            return x;
+        }
+
+        x += y;
+
+        return nextY;
+    };
 }
 
 module.exports = {
