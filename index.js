@@ -19,12 +19,12 @@ function customBind (func, context, ...args) {
  * sum :: void -> Number
  */
 function sum (x) {
-    if(typeof(x) !== 'number' && isNaN(x)) {
+    if (typeof (x) !== 'number' && isNaN(x)) {
         return 0;
     }
 
     return function (a) {
-        if (typeof(a) === 'number' && !isNaN(x)) {
+        if (typeof (a) === 'number' && !isNaN(x)) {
             return sum(x + a);
         }
 
