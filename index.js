@@ -23,7 +23,7 @@ function sum (x) {
             return sum;
         }
 
-        return x;   
+        return x;
     };
 }
 
