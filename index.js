@@ -15,6 +15,7 @@ function sum (x) {
     if (x === undefined) {
         return 0;
     }
+
     return function summation (nextArg) {
         if (nextArg === undefined) {
             return Number(this);
